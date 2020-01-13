@@ -9,6 +9,12 @@
 
 # Microarray<a name="microarray"></a>
 
+The microarray is deposited at GEO accession number: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143254">GSE143254</a> with following two subseries:
+<ul>
+  <li>Tissue: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143253">GSE143253</a></li>
+  <li>Cell lines: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143250">GSE143250</a></li>
+</ul>
+
 ## Normalizing Raw Data
 
 ## Differential Gene Expression (Tissue)
