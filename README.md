@@ -30,6 +30,10 @@ The following command will download the normalized microarray values (from GEO) 
 
 ## Differential Gene Expression (Tissue)
 
+The following command will perform differential gene expression analysis on normalized tissue microarray data deposited in <i>microarray/processed_microarray/tissue/</i> (from the previous step). The output of the analysis will be deposited in that same directory. Each tissue will have a set of files produced from the analysis. For example, for liver, we'll have the files liver_diffexpr.csv (containing the differential gene expression log fold changes and p-values), liver_control_values.csv (containing the probe intensities for the control samples), and liver_myc_values.csv (containing the probe intensities for the MYC-induced tumor samples).
+
+<pre>Rscript microarray/diffexpr.r microarray/processed_microarray</pre>
+
 ## Rank Product Analysis (Cell Lines)
 
 # RNA-Seq<a name="rnaseq"></a>
