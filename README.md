@@ -22,6 +22,12 @@ The following command will reproduce the normalized values (as shown in GEO) in 
 
 <pre>Rscript microarray/normalize.r microarray/processed_microarray</pre>
 
+## Downloading normalized data
+
+The following command will download the normalized microarray values (from GEO) into a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory. (Use this if you want to skip the raw data normalization step above).
+
+<pre>Rscript microarray/download.r microarray/processed_microarray</pre>
+
 ## Differential Gene Expression (Tissue)
 
 ## Rank Product Analysis (Cell Lines)
