@@ -50,4 +50,5 @@ The following command will download the normalized microarray values (from GEO) 
   <li>R version 3.6.1</li>
   <li>GEOquery 2.54.0</li>
   <li>lumi 2.38.0</li>
+  <li>limma 3.42.0</li>
 </ul>
