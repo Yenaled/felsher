@@ -1,11 +1,3 @@
-# Software Versions
-
-<ul>
-  <li>R version 3.6.1</li>
-  <li>GEOquery 2.54.0</li>
-  <li>lumi 2.38.0</li>
-</ul>
-
 # Table of contents
 1. [Microarray](#microarray)
 2. [RNA-Seq](#rnaseq)
@@ -14,6 +6,7 @@
 5. [Machine Learning](#ml)
 6. [ChIP-Seq](#chipseq)
 7. [Gene Symbol Mapping Tool](#mapping)
+8. [Appendix](#appendix)
 
 # Microarray<a name="microarray"></a>
 
@@ -40,3 +33,11 @@ The microarray is deposited at GEO accession number: <a href="https://www.ncbi.n
 # ChIP-Seq<a name="chipseq"></a>
 
 # Gene Symbol Mapping Tool<a name="mapping"></a>
+
+# Appendix<a name="appendix"></a>
+## Software Versions
+<ul>
+  <li>R version 3.6.1</li>
+  <li>GEOquery 2.54.0</li>
+  <li>lumi 2.38.0</li>
+</ul>
