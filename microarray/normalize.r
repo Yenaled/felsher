@@ -90,10 +90,10 @@ for (f in filenames) {
   }
   output_file <- gsub("(.*)non-normalized_","",basename(f))
   if (grepl(cell_accession, basename(f))) { # Write out processed cell line expression data
-    write.table(data_final, file=paste(output_dir_cells, "VALUE_", output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
+    write.table(data_final, file=paste(output_dir_cells, output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
     write.table(data_final_p, file=paste(output_dir_cells, "Detection_Pval_", output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
   } else { # Write out processed tissue expression data
-    write.table(data_final, file=paste(output_dir_tissue, "VALUE_", output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
+    write.table(data_final, file=paste(output_dir_tissue, output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
     write.table(data_final_p, file=paste(output_dir_tissue, "Detection_Pval_", output_file, sep=""), sep="\t", quote=FALSE, row.names=TRUE)
   }
 }
