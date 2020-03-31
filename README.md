@@ -18,6 +18,10 @@ The microarray is deposited at GEO accession number: <a href="https://www.ncbi.n
 
 ## Normalizing Raw Data
 
+The following command will reproduce the normalized values (as shown in GEO) in a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory.
+
+<pre>Rscript microarray/normalize.r microarray/processed_microarray</pre>
+
 ## Differential Gene Expression (Tissue)
 
 ## Rank Product Analysis (Cell Lines)
