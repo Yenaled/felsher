@@ -1,3 +1,11 @@
+# Software Versions
+
+<ul>
+  <li>R version 3.6.1</li>
+  <li>GEOquery 2.54.0</li>
+  <li>lumi 2.38.0</li>
+</ul>
+
 # Table of contents
 1. [Microarray](#microarray)
 2. [RNA-Seq](#rnaseq)
