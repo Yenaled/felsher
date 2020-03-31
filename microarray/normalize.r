@@ -21,7 +21,6 @@ dir.create(output_dir_raw, recursive=TRUE)
 dir.create(output_dir_tissue, recursive=TRUE)
 dir.create(output_dir_cells, recursive=TRUE)
 
-
 # Obtain GEO records
 cell_accession <- "GSE143250"
 tissue_accession <- "GSE143253"
@@ -45,7 +44,12 @@ filenames <- sapply(filenames, function(x) {
     unzipped_filename <- paste(unzipped_filename_prefix, "_", tissue_type, ".txt", sep="")
     unzipped_filename <- paste(output_dir_raw, basename(unzipped_filename), sep="")
     unzipped_filenames <- c(unzipped_filenames, unzipped_filename)
-    write.table(data[,c(1,col_index:(col_index+tissue_types[tissue_type]-1))], file=unzipped_filename, sep="\t", quote=FALSE, row.names=FALSE)
+    data_to_write <- data[,c(1,col_index:(col_index+tissue_types[tissue_type]-1))]
+    if (grepl(cell_accession, basename(unzipped_filename_prefix))) {
+      # For cell line data, only consider myc-driven cell lines (for the purposes of the paper)
+      data_to_write <- data_to_write[,c(colnames(data_to_write)[1], colnames(data_to_write)[grepl("myc", colnames(data_to_write))])]
+    }
+    write.table(data_to_write, file=unzipped_filename, sep="\t", quote=FALSE, row.names=FALSE)
     col_index <- col_index + tissue_types[tissue_type]
   }
   return(unzipped_filenames)
