@@ -18,9 +18,9 @@ The microarray is deposited at GEO accession number: <a href="https://www.ncbi.n
 
 ## Normalizing Raw Data
 
-The following command will reproduce the normalized values in a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory.
+The following command will obtain the raw and normalized microarray values and put them into a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory using the Mouse-WG6 annotation file supplied (to map probe IDs to gene IDs/symbols). The normalized values deposited on GEO will be reproduced and, separately, the normalized values used in the paper (where poorly-detected probes were filtered) will also be produced.
 
-<pre>Rscript microarray/normalize.r microarray/processed_microarray</pre>
+<pre>Rscript microarray/normalize.r microarray/processed_microarray microarray/annotation/MouseWG-6v2.csv</pre>
 
 ## Downloading normalized data
 
