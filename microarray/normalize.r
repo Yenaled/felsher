@@ -127,11 +127,9 @@ print(paste("Probes with high p-values:", length(probes_highP_tissue)))
 # (Unlike the GEO submission, probes are filtered beforehand)
 for (f in filenames) {
   filename <- paste(output_dir_filtered, basename(f), sep="")
-  print(filename)
   data <- read.table(f, header=TRUE, stringsAsFactors=FALSE, check.names=FALSE, sep="\t")
   data <- data[data$PROBE_ID %in% annotated_probes,]
   data <- data[!(data$PROBE_ID %in% probes_highP_tissue),]
-  print(nrow(data))
   write.table(data, file=filename, sep="\t", quote=FALSE, row.names=FALSE)
   
   x.lumi <- lumiR(filename)
