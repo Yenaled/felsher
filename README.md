@@ -29,10 +29,10 @@ The following command will download the normalized microarray values (from GEO) 
 <pre>Rscript microarray/download.r microarray/processed_microarray</pre>
 
 ## Differential Gene Expression (Tissue)
-### Probe-Level
-The following command will perform differential gene expression analysis on normalized tissue microarray data deposited in <i>microarray/processed_microarray/tissue/</i> (from the previous step). The output of the analysis will be deposited in that same directory. Each tissue will have a set of files produced from the analysis. For example, for liver, we'll have the files liver<b>_diffexpr.csv</b> (containing the differential gene expression log fold changes and p-values), liver<b>_control_values.csv</b> (containing the probe intensities for the control samples), and liver<b>_myc_values.csv</b> (containing the probe intensities for the MYC-induced tumor samples).
 
-<pre>Rscript microarray/diffexpr.r microarray/processed_microarray</pre>
+The following command will perform differential gene expression analysis on normalized tissue microarray data deposited in <i>microarray/processed_microarray/tissue/</i> (described previously). The output of the analysis will be deposited in that same directory. Each tissue will have a set of files produced from the analysis. For example, for liver, we'll have a set of files prefixed with <i>liver</i> containing differential gene expression analysis and expression values. Both the differential gene expression analysis and expression values are done at probe-level and are aggregated at gene-level (for differential expression, Fisher's method is used to combine p-values and the probe with the highest absolute value of log2 fold change is used as effect size; for expression values, the mean of the probe intensities is used for gene-level aggregation).
+
+<pre>Rscript microarray/diffexpr.r microarray/processed_microarray microarray/annotation/MouseWG-6v2.csv</pre>
 
 ## Rank Product Analysis (Cell Lines)
 
