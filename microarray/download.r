@@ -13,8 +13,8 @@ invisible(lapply(pkgs, function(x) suppressWarnings(suppressMessages(library(x, 
 # Get command line arguments to get output directory that files will be created in:
 args <- commandArgs(TRUE)
 output_dir <- args[1]
-output_dir_tissue <- paste(output_dir, "/", "tissue/", sep="")
-output_dir_cells <- paste(output_dir, "/", "cells/", sep="")
+output_dir_tissue <- paste(output_dir, "/", "tissue_geo/", sep="")
+output_dir_cells <- paste(output_dir, "/", "cells_geo/", sep="")
 dir.create(output_dir_tissue, recursive=TRUE)
 dir.create(output_dir_cells, recursive=TRUE)
 
