@@ -18,13 +18,13 @@ The microarray is deposited at GEO accession number: <a href="https://www.ncbi.n
 
 ## Normalizing Raw Data
 
-The following command will reproduce the normalized values (as shown in GEO) in a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory.
+The following command will reproduce the normalized values in a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory.
 
 <pre>Rscript microarray/normalize.r microarray/processed_microarray</pre>
 
 ## Downloading normalized data
 
-The following command will download the normalized microarray values (from GEO) into a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory. (Use this if you want to skip the raw data normalization step above).
+The following command will download the normalized microarray values (from GEO) into a sub-directory, named <i>processed_microarray</i>, created within the <i>microarray</i> directory. (Use this if you only want to obtain the normalized data as deposited on GEO; keep in mind that the analysis on the paper doesn't use these values).
 
 <pre>Rscript microarray/download.r microarray/processed_microarray</pre>
 
