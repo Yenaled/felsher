@@ -3,16 +3,18 @@
 ### Description: Gets differential gene expression
 ###              from microarray data. Outputs into 
 ###              supplied <input_directory>/tissue/.
-### Usage: Rscript diffexpr.r <input_directory>
+### Usage: Rscript diffexpr.r <input_directory> <annotation_file>
 ### Written by Delaney Sullivan
 ###############################################################
 
 # Get command-line arguments
 args <- commandArgs(TRUE)
 input_directory <- paste(args[1], "tissue/", sep="/")
+annotated_probes <- read.csv(args[2], stringsAsFactors=FALSE, header=TRUE) # Read annotation file
+annotated_probes <- annotated_probes[!is.na(annotated_probes$ID),] # Only consider probes that don't have NA IDs
 
 # Load R packages
-pkgs <- c("limma")
+pkgs <- c("limma", "aggregation")
 invisible(lapply(pkgs, function(x) suppressWarnings(suppressMessages(library(x, character.only=TRUE)))))
 
 ### Function: getMicroarrayData
@@ -45,6 +47,32 @@ diffExpr <- function(data.control, data.myc, batch = NULL) {
     return(results)
 }
 
+### Function: geneDE
+### Performs gene-level differential gene expression analysis
+geneDE <- function(diffexpr, annotated_probes) {
+  diffexpr <- merge(annotated_probes,diffexpr, by.x="ProbeID", by.y=0)
+  diffexpr_geneExpr <- aggregate(diffexpr[,"logFC",drop=FALSE], by=list(diffexpr$ID), FUN=function(x) { x[which.max(abs(x))] })
+  diffexpr_genePVal <- aggregate(diffexpr[,"P.Value",drop=FALSE], by=list(diffexpr$ID), FUN=function(x) { fisher(x) })
+  colnames(diffexpr_geneExpr) <- c("ID", "logFC")
+  colnames(diffexpr_genePVal) <- c("ID", "P.Value")
+  diffexpr <- merge(diffexpr_geneExpr, diffexpr_genePVal, by="ID")
+  diffexpr <- merge(annotated_probes[!duplicated(annotated_probes$ID),c("ID", "Symbol")], diffexpr, by="ID")
+  diffexpr[,"adj.P.Val"] <- p.adjust(diffexpr[,"P.Value"], method="BH")
+  diffexpr <- diffexpr[order(diffexpr[,"adj.P.Val"]),]
+  return(diffexpr)
+}
+### Function: geneVals
+### Gets aggregated probe-intensity values at gene-level
+geneVals <- function(df, annotated_probes) {
+  df_cols <- colnames(df)
+  df <- merge(annotated_probes,df, by.x="ProbeID", by.y=0)
+  df <- aggregate(df[,df_cols,drop=FALSE], by=list(df$ID), FUN=mean)
+  colnames(df)[1] <- "ID"
+  df <- merge(annotated_probes[!duplicated(annotated_probes$ID),c("ID", "Symbol")], df, by="ID")
+  return(df)
+}
+
+
 #############################
 #### GET MICROARRAY DATA ####
 #############################
@@ -65,14 +93,23 @@ lung.diffexpr <- diffExpr(data.lung_control, data.lung_myc)
 write.csv(lung.diffexpr, file=paste(input_directory, "lung_diffexpr.csv", sep=""))
 write.csv(data.lung_control, file=paste(input_directory, "lung_control_values.csv", sep=""))
 write.csv(data.lung_myc, file=paste(input_directory, "lung_myc_values.csv", sep=""))
+write.csv(geneDE(lung.diffexpr, annotated_probes), file=paste(input_directory, "lung_diffexpr_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(data.lung_control, annotated_probes), file=paste(input_directory, "lung_control_values_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(data.lung_myc, annotated_probes), file=paste(input_directory, "lung_myc_values_gene.csv", sep=""), row.names=FALSE)
+
 # Lung MYC+KRAS diffexpr
 lungmycras.diffexpr <- diffExpr(data.lung_control, data.lung_mycras)
 write.csv(lungmycras.diffexpr, file=paste(input_directory, "lung_mycras_diffexpr.csv", sep=""))
 write.csv(data.lung_mycras, file=paste(input_directory, "lung_mycras_values.csv", sep=""))
+write.csv(geneDE(lungmycras.diffexpr, annotated_probes), file=paste(input_directory, "lung_mycras_diffexpr_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(data.lung_mycras, annotated_probes), file=paste(input_directory, "lung_mycras_values_gene.csv", sep=""), row.names=FALSE)
+
 # Lung KRAS diffexpr
 lungras.diffexpr <- diffExpr(data.lung_control, data.lung_ras)
 write.csv(lungras.diffexpr, file=paste(input_directory, "lung_ras_diffexpr.csv", sep=""))
 write.csv(data.lung_ras, file=paste(input_directory, "lung_ras_values.csv", sep=""))
+write.csv(geneDE(lungras.diffexpr, annotated_probes), file=paste(input_directory, "lung_ras_diffexpr_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(data.lung_ras, annotated_probes), file=paste(input_directory, "lung_ras_values_gene.csv", sep=""), row.names=FALSE)
 
 # Retrieve kidney tissue microarray data
 kidney.series <- "kidney"
@@ -98,6 +135,7 @@ kidney.myc.output.order <- c("kidney_preneo_myc_1wk_batch1", "kidney_preneo_myc_
 # Kidney diffexpr
 kidney.diffexpr <- diffExpr(data.kidney_control, data.kidney_myc[,c(kidney_myc.batch1.relevant,kidney_myc.batch2.relevant)], kidney.batches.relevant)
 write.csv(kidney.diffexpr, file=paste(input_directory, "kidney_diffexpr.csv", sep=""))
+write.csv(geneDE(kidney.diffexpr, annotated_probes), file=paste(input_directory, "kidney_diffexpr_gene.csv", sep=""), row.names=FALSE)
 # batch-correct the data before outputting
 condition <- factor(c(rep("Normal", ncol(data.kidney_control)), kidney_myc_factors))
 design <- model.matrix(~0+condition)
@@ -105,6 +143,8 @@ kidney.data.batchcorrect <- cbind(data.kidney_control, data.kidney_myc)
 kidney.data.batchcorrect <- removeBatchEffect(kidney.data.batchcorrect, design=design, batch=kidney.batches)
 write.csv(kidney.data.batchcorrect[,1:ncol(data.kidney_control)], file=paste(input_directory, "kidney_control_values.csv", sep=""))
 write.csv(kidney.data.batchcorrect[,kidney.myc.output.order], file=paste(input_directory, "kidney_myc_values.csv", sep=""))
+write.csv(geneVals(kidney.data.batchcorrect[,1:ncol(data.kidney_control)], annotated_probes), file=paste(input_directory, "kidney_control_values_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(kidney.data.batchcorrect[,kidney.myc.output.order], annotated_probes), file=paste(input_directory, "kidney_myc_values_gene.csv", sep=""), row.names=FALSE)
 
 
 # Retrieve liver tissue microarray data
@@ -128,6 +168,7 @@ liver.batches <- factor(c(rep("Batch2", length(liver_control.batch2)), rep("Batc
 # Liver diffexpr
 liver.diffexpr <- diffExpr(data.liver_control, data.liver_myc, liver.batches)
 write.csv(liver.diffexpr, file=paste(input_directory, "liver_diffexpr.csv", sep=""))
+write.csv(geneDE(liver.diffexpr, annotated_probes), file=paste(input_directory, "liver_diffexpr_gene.csv", sep=""), row.names=FALSE)
 # batch-correct the data before outputting
 condition <- factor(c(rep("Normal", ncol(data.liver_control)), rep("MYC", ncol(data.liver_myc))))
 design <- model.matrix(~0+condition)
@@ -135,3 +176,5 @@ liver.data.batchcorrect <- cbind(data.liver_control, data.liver_myc)
 liver.data.batchcorrect <- removeBatchEffect(liver.data.batchcorrect, design=design, batch=liver.batches)
 write.csv(liver.data.batchcorrect[,1:ncol(data.liver_control)], file=paste(input_directory, "liver_control_values.csv", sep=""))
 write.csv(liver.data.batchcorrect[,c(liver_myc.batch1, liver_myc.batch2, liver_myc.batch3)], file=paste(input_directory, "liver_myc_values.csv", sep=""))
+write.csv(geneVals(liver.data.batchcorrect[,1:ncol(data.liver_control)], annotated_probes), file=paste(input_directory, "liver_control_values_gene.csv", sep=""), row.names=FALSE)
+write.csv(geneVals(liver.data.batchcorrect[,c(liver_myc.batch1, liver_myc.batch2, liver_myc.batch3)], annotated_probes), file=paste(input_directory, "liver_myc_values_gene.csv", sep=""), row.names=FALSE)
