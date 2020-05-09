@@ -49,6 +49,7 @@ The following command will perform differential gene expression analysis on norm
 # Gene Symbol Mapping Tool<a name="mapping"></a>
 
 # Appendix<a name="appendix"></a>
+
 ## Software Versions
 <ul>
   <li>R version 3.6.1</li>
@@ -58,3 +59,7 @@ The following command will perform differential gene expression analysis on norm
   <li>aggregation 1.0.1</li>
   <li>UpSetR 1.4.0</li>
 </ul>
+
+## Loading files in Excel
+
+When loading .csv files or files containing tab-separated values in Excel, use File -> Import to import the files into Excel and set "Column data format" for all columns containing gene names/symbols to "Text" rather than "General". This will allow you to avoid issues with gene names being reformatted (e.g. March7 becoming 7-Mar).
