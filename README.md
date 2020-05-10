@@ -38,6 +38,10 @@ The following command will perform differential gene expression analysis on norm
 
 # RNA-Seq<a name="rnaseq"></a>
 
+# Integrating Differential Gene Expression Analyses<a name="rnaseq"></a>
+
+The following command will 
+
 # TCGA<a name="tcga"></a>
 
 # CCLE<a name="ccle"></a>
