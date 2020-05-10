@@ -66,6 +66,9 @@ The following command will integrate information from multiple differential gene
   <li>UpSetR 1.4.0</li>
   <li>VennDiagram 1.6.20</li>
   <li>openxlsx 4.1.5</li>
+  <li>kallisto 0.44.0</li>
+  <li>sleuth 0.30.0</li>
+  <li>DESeq2 1.22.2</li>
 </ul>
 
 ## Loading files in Excel
