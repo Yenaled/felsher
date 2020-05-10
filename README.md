@@ -58,6 +58,7 @@ The following command will perform differential gene expression analysis on norm
   <li>limma 3.42.0</li>  
   <li>aggregation 1.0.1</li>
   <li>UpSetR 1.4.0</li>
+  <li>VennDiagram 1.6.20</li>
 </ul>
 
 ## Loading files in Excel
