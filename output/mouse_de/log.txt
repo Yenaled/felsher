@@ -1,0 +1,8 @@
+[1] "HCC - liver_myc - 2435 DE genes: 1221 up and 1214 down"
+[1] "RCC - kidney_myc - 2344 DE genes: 1193 up and 1151 down"
+[1] "LAC (MYC) - lung_myc - 1339 DE genes: 462 up and 877 down"
+[1] "LAC (MYC+KRAS) - lung_mycras - 1865 DE genes: 788 up and 1077 down"
+[1] "LAC (KRAS) - lung_ras - 1216 DE genes: 449 up and 767 down"
+[1] "T-ALL - tall_myc - 6803 DE genes: 3376 up and 3427 down"
+[1] "BCL - eumyc_myc - 3843 DE genes: 1948 up and 1895 down"
+[1] "Number of genes total: 27680"
