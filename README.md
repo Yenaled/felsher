@@ -59,6 +59,7 @@ The following command will perform differential gene expression analysis on norm
   <li>aggregation 1.0.1</li>
   <li>UpSetR 1.4.0</li>
   <li>VennDiagram 1.6.20</li>
+  <li>openxlsx 4.1.5</li>
 </ul>
 
 ## Loading files in Excel
