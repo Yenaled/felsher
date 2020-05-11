@@ -69,6 +69,8 @@ The following command will integrate information from multiple differential gene
   <li>kallisto 0.44.0</li>
   <li>sleuth 0.30.0</li>
   <li>DESeq2 1.22.2</li>
+  <li>GenomicFeatures 1.38.0</li>
+  <li>fgsea 1.12.0</li>
 </ul>
 
 ## Loading files in Excel
