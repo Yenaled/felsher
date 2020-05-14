@@ -74,7 +74,7 @@ Figures in paper were generated as follows:
         <ul>
           <li> PDF file: output/mouse_de/venn.pdf</li>
           <li>Raw data: output/mouse_de/</li>
-          <li><a href="mouse_integration">Link to method</a></li>
+          <li><a href="#mouse_integration">Link to method</a></li>
         </ul>
       </li>
       <li>C: Self-created figure</li>
@@ -82,7 +82,7 @@ Figures in paper were generated as follows:
         <ul>
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
           <li>Raw data: output/enrichr_mouse_tissue/</li>
-          <li><a href="mouse_tissue_enrichment">Link to method</a></li>
+          <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
         </ul>
       </li>
     </ul>
