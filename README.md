@@ -8,7 +8,8 @@
 7. [Machine Learning](#ml)
 8. [ChIP-Seq](#chipseq)
 9. [Gene Symbol Mapping Tool](#mapping)
-10. [Appendix](#appendix)
+10. [Figures] (#figures)
+11. [Appendix](#appendix)
 
 # Microarray<a name="microarray"></a>
 
@@ -46,7 +47,7 @@ The following command will integrate information from multiple differential gene
 
 # Downstream Analyses of Mouse Differential Gene Expression Data<a name="mouse_downstream_analyses"></a>
 
-## Mouse tissue enrichment analysis
+## Mouse tissue enrichment analysis<a name="mouse_tissue_enrichment"></a>
 
 Run the following script for mouse tissue enrichment analysis. Output folder: output/enrichr_mouse_tissue
 <pre>Rscript analyze_mouse_tissue_enrichment.r</pre>
@@ -61,10 +62,37 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 
 # Gene Symbol Mapping Tool<a name="mapping"></a>
 
+# Figures<a name="figures"></a>
+
+Figures in paper were generated as follows:
+<ol>
+  <li>
+    <ol>
+      <li>Self-created figure</li>
+      <li>
+        <ul>
+          <li>PDF file: output/mouse_de/venn.pdf</li>
+          <li>Raw data: output/mouse_de/</li>
+          <li><a href="mouse_integration">Link to method</a></li>
+        </ul>
+      </li>
+      <li>Self-created figure</li>
+      <li>
+        <ul>
+          <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
+          <li>Raw data: output/enrichr_mouse_tissue/</li>
+          <li><a href="mouse_tissue_enrichment">Link to method</a></li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ol>
+
 # Appendix<a name="appendix"></a>
 
 ## Software Versions
 <ul>
+  <li>Graphpad Prism 8.4.1</li>
   <li>R version 3.6.1</li>
   <li>GEOquery 2.54.0</li>
   <li>lumi 2.38.0</li>
