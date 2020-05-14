@@ -116,6 +116,10 @@ Supplementary tables in paper were generated as follows:
           <li><a href="#mouse_integration">Link to method</a></li>
         </ul>
       </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
       <li>output/enrichr_mouse_tissue/tissue_enrichment_table.xlsx
         <ul>
           <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
@@ -124,8 +128,6 @@ Supplementary tables in paper were generated as follows:
     </ul>
   </li>
 </ol>
-
-
 
 # Appendix<a name="appendix"></a>
 
