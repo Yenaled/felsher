@@ -65,19 +65,20 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 # Figures<a name="figures"></a>
 
 Figures in paper were generated as follows:
+
 <ol>
   <li>
-    <ol style="list-style-type: upper-alpha" type="A">
-      <li>Self-created figure</li>
-      <li>
+    <ul>
+      <li>A: Self-created figure</li>
+      <li>B:
         <ul>
-          <li>PDF file: output/mouse_de/venn.pdf</li>
+          <li> PDF file: output/mouse_de/venn.pdf</li>
           <li>Raw data: output/mouse_de/</li>
           <li><a href="mouse_integration">Link to method</a></li>
         </ul>
       </li>
-      <li>Self-created figure</li>
-      <li>
+      <li>C: Self-created figure</li>
+      <li>D:
         <ul>
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
           <li>Raw data: output/enrichr_mouse_tissue/</li>
@@ -87,12 +88,6 @@ Figures in paper were generated as follows:
     </ol>
   </li>
 </ol>
-
-s
-
-A. One
-B. Two
-C. Three
 
 
 
