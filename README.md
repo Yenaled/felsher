@@ -90,10 +90,9 @@ Figures in paper were generated as follows:
 
 s
 
-1. One
-  A. SDF
-2. Two
-3. Three
+A. One
+B. Two
+C. Three
 
 
 
