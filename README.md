@@ -72,8 +72,8 @@ Figures in paper were generated as follows:
       <li>A: Self-created figure</li>
       <li>B:
         <ul>
-          <li> PDF file: output/mouse_de/venn.pdf</li>
-          <li>Raw data: output/mouse_de/</li>
+          <li>PDF file: output/mouse_de/venn.pdf</li>
+          <li>Raw output: output/mouse_de/</li>
           <li><a href="#mouse_integration">Link to method</a></li>
         </ul>
       </li>
@@ -81,7 +81,43 @@ Figures in paper were generated as follows:
       <li>D:
         <ul>
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
-          <li>Raw data: output/enrichr_mouse_tissue/</li>
+          <li>Raw output: output/enrichr_mouse_tissue/</li>
+          <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+Supplementary figures in paper were generated as follows:
+
+<ol>
+  <li>
+    <ul>
+      <li>Self-created figure</li>
+      <li>output/mouse_de/upset_up.pdf
+        output/mouse_de/upset_down.pdf
+        <ul>
+          <li>Raw output: output/mouse_de/</li>
+          <li><a href="#mouse_integration">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+Supplementary tables in paper were generated as follows:
+
+<ol>
+  <li>
+    <ul>
+      <li>output/mouse_de/de_table.xlsx
+        <ul>
+          <li><a href="#mouse_integration">Link to method</a></li>
+        </ul>
+      </li>
+      <li>output/enrichr_mouse_tissue/tissue_enrichment_table.xlsx
+        <ul>
           <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
         </ul>
       </li>
