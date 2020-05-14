@@ -85,7 +85,7 @@ Figures in paper were generated as follows:
           <li><a href="mouse_tissue_enrichment">Link to method</a></li>
         </ul>
       </li>
-    </ol>
+    </ul>
   </li>
 </ol>
 
