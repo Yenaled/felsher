@@ -8,7 +8,7 @@
 7. [Machine Learning](#ml)
 8. [ChIP-Seq](#chipseq)
 9. [Gene Symbol Mapping Tool](#mapping)
-10. [Figures] (#figures)
+10. [Figures](#figures)
 11. [Appendix](#appendix)
 
 # Microarray<a name="microarray"></a>
@@ -67,7 +67,7 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 Figures in paper were generated as follows:
 <ol>
   <li>
-    <ol style="list-style-type: upper-alpha">
+    <ol style="list-style-type: upper-alpha" type="A">
       <li>Self-created figure</li>
       <li>
         <ul>
