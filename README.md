@@ -67,7 +67,7 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 Figures in paper were generated as follows:
 <ol>
   <li>
-    <ol>
+    <ol type="A">
       <li>Self-created figure</li>
       <li>
         <ul>
