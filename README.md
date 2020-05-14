@@ -99,7 +99,7 @@ Supplementary figures in paper were generated as follows:
   </li>
   <li>
     <ul>
-      <li>output/mouse_de/upset_up.pdf\
+      <li>output/mouse_de/upset_up.pdf
         output/mouse_de/upset_down.pdf
         <ul>
           <li>Raw output: output/mouse_de/</li>
