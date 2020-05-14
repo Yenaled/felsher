@@ -95,6 +95,10 @@ Supplementary figures in paper were generated as follows:
   <li>
     <ul>
       <li>Self-created figure</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
       <li>output/mouse_de/upset_up.pdf
         output/mouse_de/upset_down.pdf
         <ul>
