@@ -1,12 +1,14 @@
 # Table of contents
 1. [Microarray](#microarray)
 2. [RNA-Seq](#rnaseq)
-3. [TCGA](#tcga)
-4. [CCLE](#ccle)
-5. [Machine Learning](#ml)
-6. [ChIP-Seq](#chipseq)
-7. [Gene Symbol Mapping Tool](#mapping)
-8. [Appendix](#appendix)
+3. [Integrating Differential Gene Expression Analyses](#mouse_integration)
+4. [Downstream Analyses of Mouse Differential Gene Expression Data](#mouse_downstream_analyses)
+5. [TCGA](#tcga)
+6. [CCLE](#ccle)
+7. [Machine Learning](#ml)
+8. [ChIP-Seq](#chipseq)
+9. [Gene Symbol Mapping Tool](#mapping)
+10. [Appendix](#appendix)
 
 # Microarray<a name="microarray"></a>
 
@@ -34,15 +36,20 @@ The following command will perform differential gene expression analysis on norm
 
 <pre>Rscript microarray/diffexpr.r microarray/processed_microarray microarray/annotation/MouseWG-6v2.csv</pre>
 
-## Rank Product Analysis (Cell Lines)
-
 # RNA-Seq<a name="rnaseq"></a>
 
-# Integrating Differential Gene Expression Analyses<a name="rnaseq"></a>
+# Integrating Differential Gene Expression Analyses<a name="mouse_integration"></a>
 
 The following command will integrate information from multiple differential gene expression analyses: microarrays of liver, kidney, and lung cancers as well as RNA-seq of lymphomas. We control FDR at 0.05 and set the fold change threshold to 2 (i.e. a log2 Fold Change of 1). The output will be placed in output/mouse_de/.
 
 <pre>Rscript overlap.r 2 0.05 output/mouse_de/ liver_myc,kidney_myc,lung_myc,lung_mycras,lung_ras,tall_myc,eumyc_myc "HCC,RCC,LAC (MYC),LAC (MYC+KRAS),LAC (KRAS),T-ALL,BCL" microarray/processed_microarray/tissue/liver_diffexpr_gene.csv,microarray/processed_microarray/tissue/kidney_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_mycras_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_ras_diffexpr_gene.csv,rnaseq/tall_rnaseq/kallisto_aligned/tallmycon_sleuth_results_genes.csv,rnaseq/eumyc_rnaseq/kallisto_aligned/eumycon_sleuth_results_genes.csv microarray/annotation/MouseWG-6v2.csv rnaseq/annotation/gencode_GRCm38_vM15.csv</pre>  
+
+# Downstream Analyses of Mouse Differential Gene Expression Data<a name="mouse_downstream_analyses"></a>
+
+## Mouse tissue enrichment analysis
+
+Run the following script for mouse tissue enrichment analysis. Output folder: output/enrichr_mouse_tissue
+<pre>Rscript analyze_mouse_tissue_enrichment.r</pre>
 
 # TCGA<a name="tcga"></a>
 
@@ -71,6 +78,7 @@ The following command will integrate information from multiple differential gene
   <li>DESeq2 1.22.2</li>
   <li>GenomicFeatures 1.38.0</li>
   <li>fgsea 1.12.0</li>
+  <li>enrichR 2.1</li>
 </ul>
 
 ## Loading files in Excel
