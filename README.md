@@ -167,6 +167,8 @@ Supplementary tables in paper were generated as follows:
   <li>fgsea 1.12.0</li>
   <li>enrichR 2.1</li>
   <li>XML 3.98-1.20</li>
+  <li>sva 3.34.0</li>
+  <li>BiocParallel 1.20.0</li>
 </ul>
 
 ## Gene identifiers ortholog mapping
