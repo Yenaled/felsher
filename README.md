@@ -145,6 +145,7 @@ Supplementary tables in paper were generated as follows:
 ## Software Versions
 <ul>
   <li>Graphpad Prism 8.4.1</li>
+  <li>gdc-client 1.5.0</li>
   <li>R version 3.6.1</li>
   <li>GEOquery 2.54.0</li>
   <li>lumi 2.38.0</li>
