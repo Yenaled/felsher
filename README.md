@@ -154,6 +154,20 @@ Supplementary tables in paper were generated as follows:
   <li>enrichR 2.1</li>
 </ul>
 
+## Gene identifiers ortholog mapping
+
+To perform mapping between gene identifiers (e.g. NCBI ID, ENSEMBL, Symbol, etc.) or orthologs for annotation purposes, please see the files distributed here:
+
+https://ftp.ncbi.nlm.nih.gov/gene/DATA/
+
+Here are some files of note:
+<ul>
+  <li>https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2ensembl.gz - Mapping between NCBI Gene ID and ENSEMBL ID</li>
+  <li>https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene_orthologs.gz - Mapping between orthologs by NCBI IDs (note: human taxonomy ID: 9606; mouse taxonomy ID: 10090)</li>
+  <li>https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz - Mapping between human gene symbols and NCBI IDs, among other things</li>
+    <li>https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Mus_musculus.gene_info.gz - Mapping between mouse gene symbols and NCBI IDs, among other things</li>
+</ul>
+
 ## Loading files in Excel
 
 When loading .csv files or files containing tab-separated values in Excel, use File -> Import to import the files into Excel and set "Column data format" for all columns containing gene names/symbols to "Text" rather than "General". This will allow you to avoid issues with gene names being reformatted (e.g. March7 becoming 7-Mar).
