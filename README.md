@@ -56,14 +56,14 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 ## Obtaining TCGA data from GDC
 
 Here, we will go through an example of how to download data for the TCGA-LIHC study:
-1. Go to the GDC portal, navigate to the TCGA-LIHC repository, add all the biospecimen files (bcr xml format) and the RNA-seq files (HTSeq - Counts) to your cart, then download the manifest file (save the manifest file as gdc_manifest_lihc.txt).
+1. Go to the GDC portal, navigate to the TCGA-LIHC repository, add all the biospecimen files (bcr xml format) and the RNA-seq files (HTSeq - Counts) to your cart, then download the manifest file (save the manifest file as gdc_manifest_lihc.txt) as well as the sample sheet file (save the sample sheet file as gdc_sample_sheet_lihc.tsv).
 2. Using NCI's gdc-client software, run the following command to download the file into the path: tcga/data/lihc:
 
 <pre>gdc-client download -m gdc_manifest_lihc.txt -d tcga/data/lihc</pre>
 
 3. Then, run the following command to organize the downloaded data (the organized data will be stored in tcga/organized/lihc):
 
-<pre>tcga/organize_gdcdata.sh lihc</pre>
+<pre>tcga/organize_gdcdata.sh lihc gdc_sample_sheet_lihc.tsv</pre>
 
 
 # CCLE<a name="ccle"></a>
