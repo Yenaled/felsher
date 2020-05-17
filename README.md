@@ -60,8 +60,6 @@ Run the following script for mouse tissue enrichment analysis. Output folder: ou
 
 # ChIP-Seq<a name="chipseq"></a>
 
-# Gene Symbol Mapping Tool<a name="mapping"></a>
-
 # Figures<a name="figures"></a>
 
 Figures in paper were generated as follows:
