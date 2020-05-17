@@ -2,7 +2,7 @@
 1. [Microarray](#microarray)
 2. [RNA-Seq](#rnaseq)
 3. [Integrating Differential Gene Expression Analyses](#mouse_integration)
-4. [Downstream Analyses of Mouse Differential Gene Expression Data](#mouse_downstream_analyses)
+4. [Downstream Analyses of Mouse Differential Gene Expression](#mouse_downstream_analyses)
 5. [TCGA](#tcga)
 6. [CCLE](#ccle)
 7. [Machine Learning](#ml)
@@ -44,7 +44,7 @@ The following command will integrate information from multiple differential gene
 
 <pre>Rscript overlap.r 2 0.05 output/mouse_de/ liver_myc,kidney_myc,lung_myc,lung_mycras,lung_ras,tall_myc,eumyc_myc "HCC,RCC,LAC (MYC),LAC (MYC+KRAS),LAC (KRAS),T-ALL,BCL" microarray/processed_microarray/tissue/liver_diffexpr_gene.csv,microarray/processed_microarray/tissue/kidney_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_mycras_diffexpr_gene.csv,microarray/processed_microarray/tissue/lung_ras_diffexpr_gene.csv,rnaseq/tall_rnaseq/kallisto_aligned/tallmycon_sleuth_results_genes.csv,rnaseq/eumyc_rnaseq/kallisto_aligned/eumycon_sleuth_results_genes.csv microarray/annotation/MouseWG-6v2.csv rnaseq/annotation/gencode_GRCm38_vM15.csv</pre>  
 
-# Downstream Analyses of Mouse Differential Gene Expression Data<a name="mouse_downstream_analyses"></a>
+# Downstream Analyses of Mouse Differential Gene Expression<a name="mouse_downstream_analyses"></a>
 
 ## Mouse tissue enrichment analysis<a name="mouse_tissue_enrichment"></a>
 
