@@ -7,9 +7,8 @@
 6. [CCLE](#ccle)
 7. [Machine Learning](#ml)
 8. [ChIP-Seq](#chipseq)
-9. [Gene Symbol Mapping Tool](#mapping)
-10. [Figures](#figures)
-11. [Appendix](#appendix)
+9. [Figures](#figures)
+10. [Appendix](#appendix)
 
 # Microarray<a name="microarray"></a>
 
