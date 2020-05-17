@@ -163,6 +163,7 @@ Supplementary tables in paper were generated as follows:
   <li>GenomicFeatures 1.38.0</li>
   <li>fgsea 1.12.0</li>
   <li>enrichR 2.1</li>
+  <li>XML 3.98-1.20</li>
 </ul>
 
 ## Gene identifiers ortholog mapping
