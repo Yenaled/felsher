@@ -56,6 +56,10 @@ Here, we will go through an example of how to download data for the TCGA-LIHC st
 
 <pre>tcga/processgdc.sh lihc</pre>
 
+5. Finally, run the following command to normalize the data (via DESeq2) with batch-correction. The normalized counts will be outputted into tcga/normalized/lihc.
+
+<pre>tcga/normalize.sh lihc</pre>
+
 # Integrating Differential Gene Expression Analyses<a name="mouse_integration"></a>
 
 The following command will integrate information from multiple differential gene expression analyses: microarrays of liver, kidney, and lung cancers as well as RNA-seq of lymphomas. We control FDR at 0.05 and set the fold change threshold to 2 (i.e. a log2 Fold Change of 1). The output will be placed in output/mouse_de/.
