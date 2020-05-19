@@ -16,9 +16,14 @@ set.seed(42)
 raw_genesets_mouse_tissue <- readLines("data/Mouse_Gene_Atlas.txt")
 genes_de_up <- read.table("./output/mouse_de/de_genes_up_symbols.txt", stringsAsFactors=FALSE, header=TRUE, sep="\t")
 genes_de_down <- read.table("./output/mouse_de/de_genes_down_symbols.txt", stringsAsFactors=FALSE, header=TRUE, sep="\t")
+genes_de_up_ids <- read.table("./output/mouse_de/de_genes_up_ids.txt", stringsAsFactors=FALSE, header=TRUE, sep="\t")
+genes_de_down_ids <- read.table("./output/mouse_de/de_genes_down_ids.txt", stringsAsFactors=FALSE, header=TRUE, sep="\t")
+orthologs_ids <- read.csv("./rnaseq/annotation/human_mouse_orthologs_ids.csv", stringsAsFactors=FALSE)
+ensembl_human_mapping <- read.csv("./rnaseq/annotation/human_ensembl_ids.csv", stringsAsFactors=FALSE)
 
 # Set some paths
 microarray_directory <- "./microarray/processed_microarray/tissue/"
+tcga_directory <- "./tcga/normalized/"
 
 # Setup some variables
 mouse_tissue_geneset_names <- "liver,kidney,spleen,lung,embryonic stem line Bruce4 p13,embryonic stem line V26 2 p16"
@@ -99,3 +104,4 @@ for (line in raw_genesets_mouse_tissue) {
         }
     }
 }
+
