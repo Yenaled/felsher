@@ -94,8 +94,7 @@ Figures in paper were generated as follows:
           <li><a href="#mouse_integration">Link to method</a></li>
         </ul>
       </li>
-      <li>C: Self-created figure</li>
-      <li>D:
+      <li>C/D:
         <ul>
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
           <li>Raw output: output/enrichr_mouse_tissue/</li>
