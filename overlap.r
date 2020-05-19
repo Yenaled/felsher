@@ -139,9 +139,10 @@ pdf(paste(outputFolder, "/upset_down.pdf", sep=""), width=10, height=7.5, onefil
 upset(fromList(listInputDn), mb.ratio=c(0.65, 0.35), text.scale=c(2, 2, 1.5, 1.5, 2, 1.6), scale.intersections="identity", nsets=length(names(listInputDn)), order.by="degree", point.size=3.5, line.size=1.5)
 device <- dev.off()
 
+
 # Output summary table
 if (length(listInputUp) == 5) { # If we have 5 sets, draw a Venn Diagram as well
-    pdf(paste(outputFolder, "/venn.pdf", sep=""), width=7, height=7)
+    pdf(paste(outputFolder, "/venn.pdf", sep=""), width=14, height=7)
     listInputUp <<- listInputUp
     listInputDn <<- listInputDn
     overlap <- function(...) {
@@ -170,7 +171,7 @@ if (length(listInputUp) == 5) { # If we have 5 sets, draw a Venn Diagram as well
         overlap(1,2,4,5), overlap(1,3,4,5), overlap(2,3,4,5), overlap(1,2,3,4,5), category = names(listInputUp),
         lwd = rep(2, 5), lty = rep("solid", 5), col =
         rep("black", 5), fill = c("dodgerblue", "goldenrod1", "darkorange1", "seagreen3", "orchid3"), alpha = rep(0.5, 5),
-        label.col = rep("black", 31), cex = c(rep(2, 5), rep(1.2, 20), rep(2.1, 5), 2.4),
+        label.col = rep("black", 31), cex = c(rep(2.15, 5), rep(1.75, 20), rep(2.3, 5), 2.6),
         fontface = c(rep("plain", 25), rep("bold", 6)), fontfamily = rep("serif",
         31), cat.pos = c(0, 287.5+50, 215+25, 145, 70-50), cat.dist =
         rep(0.22, 5), cat.col = rep("black", 5), cat.cex =
@@ -182,3 +183,4 @@ if (length(listInputUp) == 5) { # If we have 5 sets, draw a Venn Diagram as well
         FALSE, area.vector = 0, margin=0.022)
     device <- dev.off()
 }
+                 
