@@ -73,7 +73,7 @@ The following command will integrate information from multiple differential gene
 Run the following script for mouse tissue enrichment analysis. Output folder: output/enrichr_mouse_tissue
 <pre>Rscript analyze_mouse_tissue_enrichment.r</pre>
 
-## Mouse DE genes in TCGA
+## Mouse DE genes in TCGA<a name="mouse_tcga"></a>
 
 Run the following script to get the expression log2 fold changes of mouse DE genes in TCGA human cancer samples (comparing human tumor with matched normal). Output folder: output/mouse_tcga
 
@@ -105,6 +105,13 @@ Figures in paper were generated as follows:
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
           <li>Raw output: output/enrichr_mouse_tissue/</li>
           <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
+        </ul>
+      </li>
+      <li>E:
+        <ul>
+          <li>Graphpad Prism file: prism/mouse_tcga.pzfx</li>
+          <li>Raw output: output/mouse_tcga/</li>
+          <li><a href="#mouse_tcga">Link to method</a></li>
         </ul>
       </li>
     </ul>
