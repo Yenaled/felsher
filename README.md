@@ -194,6 +194,33 @@ Supplementary tables in paper were generated as follows:
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>output/enrichr_mouse_go/heatmap_go_terms.csv
+        <ul>
+          <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/enrichr_mouse_go/go_gsea.xlsx
+        <ul>
+          <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/enrichr_mouse_go/tissue_go.xlsx
+        <ul>
+          <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 # Appendix<a name="appendix"></a>
