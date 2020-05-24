@@ -6,7 +6,7 @@
 ###############################################################
 
 # Load R packages
-pkgs <- c("fgsea", "openxlsx", "enrichR")
+pkgs <- c("fgsea", "openxlsx", "enrichR", "ComplexHeatmap")
 invisible(lapply(pkgs, function(x) suppressWarnings(suppressMessages(library(x, character.only=TRUE)))))
 
 # Set random seed
@@ -38,10 +38,24 @@ do_enrichment <- function(db_name, sample_mapping, genes_de_up, genes_de_down=NU
     enrichment <- list()
     enrichment_data_up <- NULL
     enrichment_data_dn <- NULL
+    if (is.null(sample_mapping)) {
+      sample_mapping <- names(genes_de_up)
+      names(sample_mapping) <- names(genes_de_up)
+    }
     for (i in names(sample_mapping)) {
-        enrich_up <- enrichr(genes_de_up[,i], c(db_name))[[db_name]]
+        if (typeof(genes_de_up) == "list") {
+          genes_up_list <- genes_de_up[[i]]
+        } else {
+          genes_up_list <- genes_de_up[,i]
+        }
+        enrich_up <- enrichr(genes_up_list, c(db_name))[[db_name]]
         if (!is.null(genes_de_down)) {
-            enrich_dn <- enrichr(genes_de_down[,i], c(db_name))[[db_name]]
+            if (typeof(genes_de_down) == "list") {
+              genes_down_list <- genes_de_down[[i]]
+            } else {
+              genes_down_list <- genes_de_down[,i]
+            }
+            enrich_dn <- enrichr(genes_down_list, c(db_name))[[db_name]]
             enrichment[[paste(sample_mapping[i], "UP", sep=" - ")]] <- enrich_up
             enrichment[[paste(sample_mapping[i], "DOWN", sep=" - ")]] <- enrich_dn
             if (!is.null(geneset_names)) {
@@ -104,4 +118,3 @@ for (line in raw_genesets_mouse_tissue) {
         }
     }
 }
-
