@@ -79,7 +79,7 @@ Run the following script to get the expression log2 fold changes of mouse DE gen
 
 <pre>Rscript analyze_mouse_genes_tcga.r</pre>
 
-## Mouse DE genes GO analysis<a name="mouse_tcga"></a>
+## Mouse DE genes GO analysis<a name="mouse_de_go"></a>
 
 Run the following script to perform GSEA of GO terms for mouse DE genes. For the top enriched GO terms, the script will also perform GO overrepresentation analysis for relevant mouse gene atlas tissue gene sets. This is to assess whether enriched GO terms in mouse DE genes have tissue-lineage dependence. Output folder: output/enrichr_mouse_go
 
@@ -124,6 +124,28 @@ Figures in paper were generated as follows:
           <li>Graphpad Prism file: prism/mouse_tcga.pzfx</li>
           <li>Raw output: output/mouse_tcga/</li>
           <li><a href="#mouse_tcga">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>Under construction</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>A:
+        <ul>
+          <li>PDF file: output/enrichr_mouse_go/heatmap_go.pdf</li>
+          <li>Raw output:
+            <ul>
+              <li>output/enrichr_mouse_go/go_gsea.xlsx</li>
+              <li>output/enrichr_mouse_go/tissue_go.xlsx</li>
+              <li>output/enrichr_mouse_go/heatmap_go_terms.csv</li>
+            </ul>
+          </li>
+          <li><a href="#mouse_de_go">Link to method</a></li>
         </ul>
       </li>
     </ul>
