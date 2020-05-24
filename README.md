@@ -79,6 +79,18 @@ Run the following script to get the expression log2 fold changes of mouse DE gen
 
 <pre>Rscript analyze_mouse_genes_tcga.r</pre>
 
+## Mouse DE genes GO analysis<a name="mouse_tcga"></a>
+
+Run the following script to perform GSEA of GO terms for mouse DE genes. For the top enriched GO terms, the script will also perform GO overrepresentation analysis for relevant mouse gene atlas tissue gene sets. This is to assess whether enriched GO terms in mouse DE genes have tissue-lineage dependence. Output folder: output/enrichr_mouse_go
+
+The script has two parts. The first part as follows and will generate the GSEA results as well as a list of top GO terms:
+
+<pre>Rscript analyze_mouse_go_enrichment.r</pre>
+
+The GSEA results will be outputted in go_gsea.xlsx and the top GO terms will be outputted in topterms.txt in the output folder. We then manually curate the top GO terms and assign them to broader categories for ease of display. The category assignment should be in a .csv file with each column name being a category name and with each GO term being assigned to a specific column. One column should be named "Other" and this contains GO terms that couldn't be assigned to a particular category (and therefore won't be displayed on the heatmap). Finally, we run the second part of the script -- supplying the .xlsx GSEA results (generated from the first part) and the .csv category assignment file (that we manually created):
+
+<pre>Rscript analyze_mouse_go_enrichment.r output/enrichr_mouse_go/go_gsea.xlsx data/go_term_collapse.csv</pre>
+
 # CCLE<a name="ccle"></a>
 
 # Machine Learning<a name="ml"></a>
