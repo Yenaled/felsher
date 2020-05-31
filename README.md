@@ -247,6 +247,7 @@ Supplementary tables in paper were generated as follows:
   <li>sva 3.34.0</li>
   <li>BiocParallel 1.20.0</li>
   <li>ComplexHeatmap 2.2.0</li>
+  <li>survival 3.1-12</li>
 </ul>
 
 ## Gene identifiers ortholog mapping
