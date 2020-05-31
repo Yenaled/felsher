@@ -26,7 +26,6 @@ getTcgaFC <- function(tcga_directory, tcga_study, ensembl_mapping, ortholog_mapp
     return(tcga_data)
 }
 
-# c(tcga,tcga,tcga), liver_tissue
 outputTcgaData <- function(mouse_tissue, tcga_studies, up_ids, down_ids, tcga_directory, ensembl_mapping, ortholog_mapping) {
     data_final_up <- NULL
     data_final_down <- NULL
