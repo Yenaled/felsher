@@ -6,7 +6,7 @@
 ###############################################################
 
 # Load R packages
-pkgs <- c("fgsea", "openxlsx", "enrichR", "ComplexHeatmap")
+pkgs <- c("fgsea", "openxlsx", "enrichR", "ComplexHeatmap", "survival")
 invisible(lapply(pkgs, function(x) suppressWarnings(suppressMessages(library(x, character.only=TRUE)))))
 
 # Set random seed
