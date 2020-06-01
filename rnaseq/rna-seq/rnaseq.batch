@@ -25,6 +25,19 @@ module load python/3.6.1
 export PATH=$PATH:$PI_HOME/python/bin
 export PYTHONUSERBASE=$PI_HOME/python
 
+# Create the output folder
+mkdir -p $SCRATCH/tall_rnaseq
+
+# Note: For the commands to download the files from SRA, use the following lines (remove the # in front):
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206939
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206940
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206941
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206942
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206943
+#$PI_HOME/sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump --skip-technical --readids --read-filter pass --split-3 --clip --outdir $SCRATCH/tall_rnaseq SRR6206944
+
+# Below assumes that the files have been downloaded and stored in $SCRATCH/tall_rnaseq
+
 # For kallisto->sleuth workflow:
 ./rnaseq.sh -t 10 -p kallisto -g "$PI_HOME/genomes/mm10/gencode.vM15.pc_lncRNA_combined_transcripts.fa $PI_HOME/genomes/mm10/hmyc_transcript.fa" -l 50 -s $PI_HOME/genomes/mm10/gencode.vM15.primary_assembly.annotation_edited.gtf $SCRATCH/tall_rnaseq
 Rscript ./de2.r 10 $SCRATCH/tall_rnaseq/kallisto_aligned/ tallmycon "SRR6206939_pass,SRR6206940_pass,SRR6206941_pass,SRR6206942_pass,SRR6206943_pass,SRR6206944_pass" "c,c,c,t,t,t" $PI_HOME/genomes/mm10/gencode.vM15.primary_assembly.annotation_edited.gtf
