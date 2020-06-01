@@ -38,6 +38,8 @@ The following command will perform differential gene expression analysis on norm
 
 # RNA-Seq<a name="rnaseq"></a>
 
+Pipeline readme here: https://github.com/Yenaled/felsher/blob/master/rnaseq/rna-seq/README.md
+
 # TCGA<a name="tcga"></a>
 
 ## Obtaining TCGA data from GDC
