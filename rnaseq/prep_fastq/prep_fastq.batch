@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+#SBATCH -n 1
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=prep_fastq
+#SBATCH --output=prep_fastq.%j.out
+#SBATCH --error=prep_fastq.%j.err
+#SBATCH --time=6:00:00
+#SBATCH --mem=8G
+#SBATCH --cpus-per-task=4
+#SBATCH --mail-type=END,FAIL
+# You can monitor your jobs with "squeue -u $USER"
+
+module load biology
+module load fastqc
+module load trim_galore
+module load pigz
+module load python/3.6.1
+export PATH=$PATH:$PI_HOME/python/bin
+export PYTHONUSERBASE=$PI_HOME/python
+
+./processfq.sh -t 4 -g /path/to/sequencing/reads --stringency 3
