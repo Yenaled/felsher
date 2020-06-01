@@ -45,16 +45,15 @@ kallisto:
 <pre>./rnaseq.sh -t 10 -p kallisto -g "gencode.vM15.pc_lncRNA_combined_transcripts.fa hmyc_transcript.fa" -s gencode.vM15.primary_assembly.annotation_edited.gtf ./tall_rnaseq</pre>
 <pre>Rscript ./de2.r 10 ./tall_rnaseq/kallisto_aligned/ tallmycon "SRR6206939_pass,SRR6206940_pass,SRR6206941_pass,SRR6206942_pass,SRR6206943_pass,SRR6206944_pass" "c,c,c,t,t,t" gencode.vM15.primary_assembly.annotation_edited.gtf</pre>
 STAR:
-<pre></pre>
-<pre></pre>
-
-
+<pre>./rnaseq.sh -t 10 -p STAR -g "GRCm38.primary_assembly.genome.fa hmyc.fa" -l 50 -s gencode.vM15.primary_assembly.annotation_edited.gtf ./tall_rnaseq</pre>
+<pre>Rscript ./de.r 10 ./tall_rnaseq/STAR_aligned/ FeatureCounts.txt 0.05 0 tallmycon "SRR6206939_pass,SRR6206940_pass,SRR6206941_pass,SRR6206942_pass,SRR6206943_pass,SRR6206944_pass" treatment:c,c,c,t,t,t "~treatment" gencode.vM15.primary_assembly.annotation_edited.gtf NULL</pre>
 
 You can view the help menu (for the alignment step) by running <b>./rnaseq.sh -h</b>
 
 Further details on how to figure the commands are as follows:
 
-<pre>rnaseq.sh -t <number of processes> -p <kallisto or STAR> -g <genome/transcriptome FASTA files> -l <read length (if using STAR)> -s <GTF annotation file> <output folder></pre>
+<pre>rnaseq.sh -t &lt;number of processes&gt; -p &lt;kallisto or STAR&gt; -g &lt;genome/transcriptome FASTA files&gt; -l &lt;read length (if using STAR)&gt; -s &lt;GTF annotation file&gt; &lt;output folder&gt;</pre>
+<pre>Rscript ./de2.r &lt;number of processes&gt; &lt;kallisto alignment directory&gt; &lt;output files prefix&gt; &lt;list of alignment file prefixes&gt; &lt;list of control (c) and treatment (t) matching the order of the supplied alignment files&gt; &lt;GTF annotation file&gt;</pre>
 <pre></pre>
 
 ## Job submission
