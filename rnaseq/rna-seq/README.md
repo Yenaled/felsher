@@ -53,8 +53,8 @@ You can view the help menu (for the alignment step) by running <b>./rnaseq.sh -h
 Further details on how to figure the commands are as follows:
 
 <pre>rnaseq.sh -t &lt;number of processes&gt; -p &lt;kallisto or STAR&gt; -g &lt;genome/transcriptome FASTA files&gt; -l &lt;read length (if using STAR)&gt; -s &lt;GTF annotation file&gt; &lt;output folder&gt;</pre>
-<pre>Rscript ./de2.r &lt;number of processes&gt; &lt;kallisto alignment directory&gt; &lt;output files prefix&gt; &lt;list of alignment file prefixes&gt; &lt;list of control (c) and treatment (t) matching the order of the supplied alignment files&gt; &lt;GTF annotation file&gt;</pre>
-<pre></pre>
+<pre>Rscript de2.r &lt;number of processes&gt; &lt;kallisto alignment directory&gt; &lt;output files prefix&gt; &lt;list of alignment file prefixes&gt; &lt;list of control (c) and treatment (t) matching the order of the supplied alignment files&gt; &lt;GTF annotation file&gt;</pre>
+<pre>Rscript de.r &lt;number of processes&gt; &lt;STAR alignment directory&gt; &lt;suffix of gene quantification file which will be either FeatureCounts.txt or ReadsPerGene.out.tab&gt; &lt;FDR&gt; &lt;log2FC threshold&gt; &lt;output files prefix&gt; &lt;explanatory variables (see example)&gt; &lt;design formula&gt; &lt;GTF annotation file&gt; &lt;Number specifying which variable in the design to compare (or NULL for default)&gt;</pre>
 
 ## Job submission
 
