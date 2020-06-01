@@ -76,7 +76,7 @@ Finally, when you're done editing rnaseq.batch, you can submit the job by typing
 
 ## Output files
 
-All new files/folders will be created in the directory you specified to be your input directory. Within that directory, the directory <b>multiqc_alignment</b> contains the QC for the alignments while <b>STAR_aligned</b> and <b>kallisto_aligned</b> will contain the actual alignments, quantifications, and DESeq2 analyses. 
+All new files/folders will be created in the directory you specified to be your input directory. Within that directory, the directory <b>multiqc_alignment</b> contains the QC for the alignments while <b>STAR_aligned</b> and <b>kallisto_aligned</b> will contain the actual alignments, quantifications, and DESeq2/sleuth analyses. 
 
 ## Seeing which commands were run
 
