@@ -41,18 +41,20 @@ Follow the instructions here for preliminary quality control and processing of y
 
 It's best to run this program as a batch job on a server and an sample template for configuring a batch job submission for the Sherlock computing cluster (at Stanford) is provided in rnaseq.batch. Edit that file as you see fit. The bottom of that file displays an example of the main commands that are going to be run for the alignment (rnaseq.sh) and the differential gene expression & normalization (de.r and de2.r):
 
+kallisto:
+<pre>./rnaseq.sh -t 10 -p kallisto -g "gencode.vM15.pc_lncRNA_combined_transcripts.fa hmyc_transcript.fa" -s gencode.vM15.primary_assembly.annotation_edited.gtf ./tall_rnaseq</pre>
+<pre>Rscript ./de2.r 10 ./tall_rnaseq/kallisto_aligned/ tallmycon "SRR6206939_pass,SRR6206940_pass,SRR6206941_pass,SRR6206942_pass,SRR6206943_pass,SRR6206944_pass" "c,c,c,t,t,t" gencode.vM15.primary_assembly.annotation_edited.gtf</pre>
 STAR:
 <pre></pre>
 <pre></pre>
-kallisto:
-<pre></pre>
-<pre></pre>
+
+
 
 You can view the help menu (for the alignment step) by running <b>./rnaseq.sh -h</b>
 
 Further details on how to figure the commands are as follows:
 
-<pre></pre>
+<pre>rnaseq.sh -t <number of processes> -p <kallisto or STAR> -g <genome/transcriptome FASTA files> -l <read length (if using STAR)> -s <GTF annotation file> <output folder></pre>
 <pre></pre>
 
 ## Job submission
