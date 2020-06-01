@@ -18,6 +18,19 @@ Pipeline for RNA-Seq analysis. Supports both STAR alignment and kallisto pseudoa
 First, clone this repository by opening a terminal, logging into your server if you're doing processing remotely (e.g. if you're using Sherlock, log into Sherlock), and then enter the following command:
 <pre>git clone https://github.com/Yenaled/felsher/rnaseq/rna-seq</pre>
 
+# Genome files and annotations
+
+GENCODE Mouse (mm10): (release 15) - https://www.gencodegenes.org/mouse/
+<ul>
+  <li>Transcriptome: gencode.vM15.pc_lncRNA_combined_transcripts.fa - Merged the "Protein-coding transcript sequences" and the "Long non-coding RNA transcript sequences"</li>
+  <li>Genome: GRCm38.primary_assembly.genome.fa - Genome sequence, primary assembly (GRCm38)</li>
+  <li>Annotations: gencode.vM15.primary_assembly.annotation.gtf - Comprehensive gene annotation	(Primary assembly)</li>
+  <li>Annotations (w/ human MYC): gencode.vM15.primary_assembly.annotation_edited.gtf - The previous file merged with hmyc_final.gtf</li>
+  <li>Human MYC annotation: hmyc_final.gtf - The final annotation for human MYC (chromosome:GRCh38:8:127734834:127742034:1) with all coordinates shifted left by 127735433 bases and chromosome names changed to hMYC (instead of chr8)</li>
+  <li>Human MYC transcript FASTA: hmyc_transcript.fa</li>
+  <li>Human MYC genome FASTA: hmyc.fa</li>
+</ul>
+
 # Downloading RNA-seq data
 
 There are many ways to download RNA-seq data. Below is a way to do so (via fastq-dump) [note: this is neither the most efficient nor the best way to obtain sequencing files]. We'll download 6 sequencing files from GSE106078 (first three are normal; next three are tumor) into the folder: ./tall_rnaseq:
