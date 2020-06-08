@@ -36,13 +36,13 @@ Read <i>carefully</i> the input file specification: https://github.com/ENCODE-DC
  
 Note: Edit the input file to use macs2 as the chip.peak_caller regardless of whether you are doing transcription factor ChIP and histone ChIP. (SPP is too slow as a peak caller).
  
-# Step 3: Prepare and run the batch file
+# Step 3: Run the pipeline
  
-Look <i>carefully</i> at the example .sh file called using sbatch (under "For singularity users"): https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/tutorial_sherlock.md -- use that as a template to create a new .sh file (and be sure to specify INPUT as the json file you built in step 2. Be sure to specify a long time for your job (e.g. --time=47:59:00) to make sure it is able to complete. Then run the .sh file as a job via the sbatch command just like in the example in the preceding link.
- 
+See further instructions at https://github.com/ENCODE-DCC/chip-seq-pipeline2
+
 # Step 4: Analysis with deeptools
 
-<p>Install <b>deeptools</b>: https://deeptools.readthedocs.io/en/develop/content/installation.html -- You may need to install conda to get deeptools installed (and instructions for installing conda can be found under "For conda users" in https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/tutorial_sherlock.md)</p>
+<p>Install <b>deeptools</b>: https://deeptools.readthedocs.io/en/develop/content/installation.html</p>
 
 Get the reference genome (e.g. for mm10 mouse) in .bed format:
 <pre>wget -qO- http://hgdownload.cse.ucsc.edu/goldenPath/mm10/database/refGene.txt.gz | gunzip -c - | awk 'BEGIN{ OFS="\t" }{ print $3, $5, $6, $13, ".", $4  }' - > refGene.bed</pre>
@@ -112,4 +112,4 @@ Then plot graphs like:
 
 # Step 5: Annotate Peak Calls
 
-The peak calls might be stored in a file ending in Peak.gz (e.g. for replicated transcription factor ChIP, you might see files like optimal_peak.narrowPeak.gz in a folder like call-reproducibility_idr/execution/, which contains peaks identified from IDR analysis). You can view more info about the various peak files here: https://www.encodeproject.org/chip-seq/. To analyze the peak files and to assign peaks to genes, use the annotatePeaks.pl utility of HOMER (http://homer.ucsd.edu/homer/). Be sure to unzip the .gz peaks file prior to using HOMER.
+The peak calls might be stored in a file ending in Peak.gz (e.g. for replicated transcription factor ChIP, you might see files like optimal_peak.narrowPeak.gz in a folder like call-reproducibility_idr/execution/, which contains peaks identified from IDR analysis). You can view more info about the various peak files here: https://www.encodeproject.org/data-standards/chip-seq/. To analyze the peak files and to assign peaks to genes, use the annotatePeaks.pl utility of HOMER (http://homer.ucsd.edu/homer/). Be sure to unzip the .gz peaks file prior to using HOMER.
