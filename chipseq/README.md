@@ -54,20 +54,22 @@ output="filtered_refGene.bed"
 
 while read -r line
 do
-        echo "$line""$(printf '\t')"|tr -d $'\r'
-done < "$fname" > "/tmp/genes_pattern.txt"
+        echo "$line""$(printf '\t')"
+done < "$fname" > "/tmp/genes.txt"
+cat "/tmp/genes.txt"|sed '/^[[:space:]]*$/d'|tr -d '\r' > "/tmp/genes_pattern.txt"
 grep -f /tmp/genes_pattern.txt refGene.bed|awk '!seen[$0]++' > "$output"
 </pre>
 
 <p>Inspect the newly created file (in the example above, filtered_refGene.bed) -- it should have only your genes of interest there. Note that some genes may appear multiple times due to having multiple transcription start sites (TSS's)</p>
-<p>Find the .fc.signal.bigwig fold change signal track file in the cromwell-executions folder; the path might look something like ./chip-seq-pipeline2/cromwell-executions/chip/41b061b8-02af-4271-a4de-0e3abdfc541b/call-macs2/shard-0/execution. Navigate to that folder.</p>
+
+<p>Find the .fc.signal.bigwig fold change signal track file; the path to it might look something like call-macs2_pooled/execution.</p>
 
 First, we want to deal with genes that have multiple TSS's. In the folder with the bigwig file, open up a python session and insert the following (obviously modifying the file names and whatnot):
 <pre>
-input_bigwig_file = "SRR3020034_pass_1_trimmed.merged.nodup_x_ctl_for_rep1.fc.signal.bigwig"
-input_bed_file =  "/path/to/filtered_refGene.bed"
-output_file = "/path/to/filtered_nodups_refGene.bed"
-padding=2000
+input_bigwig_file = "name_of_file.fc.signal.bigwig"
+input_bed_file =  "filtered_refGene.bed"
+output_file = "filtered_nodups_refGene.bed"
+padding=3000
 
 #####
 import pyBigWig
@@ -104,9 +106,9 @@ with open(output_file, 'w') as outfile:
 		o = csv_writer.writerow([v[0], v[1], v[2], k, v[4], v[5]])
 </pre>
 
-<p>This will create a new .bed file (in this case, /path/to/filtered_nodups_refGene.bed) that does not have duplicate gene names because if a gene appears multiple times due to multiple TSS's, only the one with the highest average enrichment for the signal in its TSS (+/- padding) will be used. Use that new .bed file (instead of the old /path/to/filtered_refGene.bed) in the following steps.</p>
+<p>This will create a new .bed file (in this case, filtered_nodups_refGene.bed) that does not have duplicate gene names because if a gene appears multiple times due to multiple TSS's, only the one with the highest average enrichment for the signal in its TSS (+/- padding) will be used. Use that new .bed file (instead of the old filtered_refGene.bed) in the following steps.</p>
 In that folder with your bigwig signal track file, run computeMatrix to generate a matrix file. Example (where we create a matrix based on +/- 2000 bp of the TSS):</p>
-<pre>computeMatrix reference-point --referencePoint TSS -S SRR3020034_pass_1_trimmed.merged.nodup_x_ctl_for_rep1.fc.signal.bigwig -R /path/to/filtered_nodups_refGene.bed --beforeRegionStartLength 2000 --afterRegionStartLength 2000 --skipZeros -o matrix.mat.gz</pre>
+<pre>computeMatrix reference-point --referencePoint TSS -S SRR3020034_pass_1_trimmed.merged.nodup_x_ctl_for_rep1.fc.signal.bigwig -R filtered_nodups_refGene.bed --beforeRegionStartLength 2000 --afterRegionStartLength 2000 --skipZeros -o matrix.mat.gz</pre>
 Then plot graphs like:
 <pre>plotHeatmap -m matrix.mat.gz -out heatmap.pdf --heatmapWidth 15</pre>
 
