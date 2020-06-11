@@ -67,6 +67,15 @@ Put all the processed files into the data/ directory. If working from the pipeli
 The reference genome (e.g. for mm10 mouse) in .bed format is in the data/ folder and was obtained via:
 <pre>wget -qO- http://hgdownload.cse.ucsc.edu/goldenPath/mm10/database/refGene.txt.gz | gunzip -c - | awk 'BEGIN{ OFS="\t" }{ print $3, $5, $6, $13, ".", $4  }' - > data/refGene.bed</pre>
 
+We can create the log2 ratio (tumor vs. control) bigwig files in the data/ directory via the following:
+
+<pre>
+bigwigCompare --bigwig1 data/eumyc_h3k27ac_C.fc.signal.bigwig --bigwig2 data/eumyc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k27ac.bigwig
+bigwigCompare --bigwig1 data/eumyc_h3k4me3_C.fc.signal.bigwig --bigwig2 data/eumyc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k4me3.bigwig
+bigwigCompare --bigwig1 data/hcc_h3k27ac_C.fc.signal.bigwig --bigwig2 data/hcc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k27ac.bigwig
+bigwigCompare --bigwig1 data/hcc_h3k4me3_C.fc.signal.bigwig --bigwig2 data/hcc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k4me3.bigwig
+</pre>
+
 Put all the genes you're interested in studying in a file (genes.txt) with <i>n</i> lines where <i>n</i> is your number of genes. The gene symbols in that file should match those in refGene.bed. Then run the following to filter the reference genome .bed file so that it only contains your genes of interest:
 <pre>
 fname="genes.txt"
