@@ -1,3 +1,6 @@
 felsher/chipseq/data filter=lfs diff=lfs merge=lfs -text
 chipseq/data/eumyc_h3k27ac_C.fc.signal.bigwig filter=lfs diff=lfs merge=lfs -text
 chipseq/data/refGene.bed filter=lfs diff=lfs merge=lfs -text
+chipseq/data/eumyc_h3k27ac_T.fc.signal.bigwig filter=lfs diff=lfs merge=lfs -text
+chipseq/data/eumyc_h3k4me3_C.fc.signal.bigwig filter=lfs diff=lfs merge=lfs -text
+chipseq/data/eumyc_h3k4me3_T.fc.signal.bigwig filter=lfs diff=lfs merge=lfs -text
