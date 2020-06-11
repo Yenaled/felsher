@@ -80,6 +80,9 @@ Next, we create the gene lists files (e.g. files containing upregulated/downregu
 
 <pre>
 awk -F'\t' -v c="eumyc_myc" 'NR==1{for (i=1; i<=NF; i++) if ($i==c){p=i; break}; next} {print $p}' ../output/mouse_de/de_genes_down_symbols.txt > data/eumyc_down.txt
+awk -F'\t' -v c="eumyc_myc" 'NR==1{for (i=1; i<=NF; i++) if ($i==c){p=i; break}; next} {print $p}' ../output/mouse_de/de_genes_up_symbols.txt > data/eumyc_up.txt
+awk -F'\t' -v c="liver_myc" 'NR==1{for (i=1; i<=NF; i++) if ($i==c){p=i; break}; next} {print $p}' ../output/mouse_de/de_genes_down_symbols.txt > data/hcc_down.txt
+awk -F'\t' -v c="liver_myc" 'NR==1{for (i=1; i<=NF; i++) if ($i==c){p=i; break}; next} {print $p}' ../output/mouse_de/de_genes_up_symbols.txt > data/hcc_up.txt
 </pre>
 
 Put all the genes you're interested in studying in a file (genes.txt) with <i>n</i> lines where <i>n</i> is your number of genes. The gene symbols in that file should match those in refGene.bed. Then run the following to filter the reference genome .bed file so that it only contains your genes of interest:
