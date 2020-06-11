@@ -21,11 +21,15 @@ Pipeline for ChIP-Seq analysis. We will be using the ENCODE pipeline.
     <li>HOMER v4.10</li>
 </ul>
 
-# Step 1: Setup your raw data
+# Step 1: Run the ENCODE pipeline
+
+(Skip to step 2 to start from the processed files rather than raw data)
+
+## Part a: Setup your raw data
 
 Follow the instructions here for preliminary quality control and processing of your raw fastQ sequencing read files: https://github.com/Yenaled/felsher/tree/master/rnaseq/prep_fastq
 
-# Step 2: Create the input configuration file
+## Part b: Create the input configuration file
 
 Read <i>carefully</i> the input file specification: https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/input.md and alter the options as needed. You can add additional replicates (e.g. fastqs_rep3_R1, fastqs_rep4_R1, etc.) if you have them available (be sure to add the corresponding _R2 if you have paired-end reads and specify the corresponding control FastQs as well).
 <p>IMPORTANT:</p>
@@ -36,11 +40,27 @@ Read <i>carefully</i> the input file specification: https://github.com/ENCODE-DC
  
 Note: Edit the input file to use macs2 as the chip.peak_caller regardless of whether you are doing transcription factor ChIP and histone ChIP. (SPP is too slow as a peak caller).
  
-# Step 3: Run the pipeline
+## Part c: Execute the pipeline
  
 See further instructions at https://github.com/ENCODE-DCC/chip-seq-pipeline2
 
-# Step 4: Analysis with deeptools
+# Step 2: Collect the files
+
+Put all the processed files into the data/ directory. If working from the pipeline above, you'll need to collect the .fc.signal.bigwig fold change signal track files. The path to it might look something like call-macs2_pooled/execution or, if there are no replicates, call-macs2/shard-0/execution/. Alternately, the .fc.signal.bigwig files (the bigwig files containing the fold change signal tracks) are listed below:
+
+<ul>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/eumyc_h3k27ac_C.fc.signal.bigwig">eumyc_h3k27ac_C.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/eumyc_h3k27ac_T.fc.signal.bigwig">eumyc_h3k27ac_T.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/eumyc_h3k4me3_C.fc.signal.bigwig">eumyc_h3k4me3_C.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/eumyc_h3k4me3_T.fc.signal.bigwig">eumyc_h3k4me3_T.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/hcc_h3k27ac_C.fc.signal.bigwig">hcc_h3k27ac_C.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/hcc_h3k27ac_T.fc.signal.bigwig">hcc_h3k27ac_T.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/hcc_h3k4me3_C.fc.signal.bigwig">hcc_h3k4me3_C.fc.signal.bigwig</a></li>
+	<li><a href="https://github.com/Yenaled/felsher/releases/download/felsher/hcc_h3k4me3_T.fc.signal.bigwig">hcc_h3k4me3_T.fc.signal.bigwig</a></li>
+</ul>
+	
+
+# Step 3: Analysis with deeptools
 
 <p>Install <b>deeptools</b>: https://deeptools.readthedocs.io/en/develop/content/installation.html</p>
 
@@ -112,6 +132,6 @@ In that folder with your bigwig signal track file, run computeMatrix to generate
 Then plot graphs like:
 <pre>plotHeatmap -m matrix.mat.gz -out heatmap.pdf --heatmapWidth 15</pre>
 
-# Step 5: Annotate Peak Calls
+# Step 4: Annotate Peak Calls
 
 The peak calls might be stored in a file ending in Peak.gz (e.g. for replicated transcription factor ChIP, you might see files like optimal_peak.narrowPeak.gz in a folder like call-reproducibility_idr/execution/, which contains peaks identified from IDR analysis). You can view more info about the various peak files here: https://www.encodeproject.org/data-standards/chip-seq/. To analyze the peak files and to assign peaks to genes, use the annotatePeaks.pl utility of HOMER (http://homer.ucsd.edu/homer/). Be sure to unzip the .gz peaks file prior to using HOMER.
