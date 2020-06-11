@@ -64,8 +64,8 @@ Put all the processed files into the data/ directory. If working from the pipeli
 
 <p>Install <b>deeptools</b>: https://deeptools.readthedocs.io/en/develop/content/installation.html</p>
 
-Get the reference genome (e.g. for mm10 mouse) in .bed format:
-<pre>wget -qO- http://hgdownload.cse.ucsc.edu/goldenPath/mm10/database/refGene.txt.gz | gunzip -c - | awk 'BEGIN{ OFS="\t" }{ print $3, $5, $6, $13, ".", $4  }' - > refGene.bed</pre>
+The reference genome (e.g. for mm10 mouse) in .bed format is in the data/ folder and was obtained via:
+<pre>wget -qO- http://hgdownload.cse.ucsc.edu/goldenPath/mm10/database/refGene.txt.gz | gunzip -c - | awk 'BEGIN{ OFS="\t" }{ print $3, $5, $6, $13, ".", $4  }' - > data/refGene.bed</pre>
 
 Put all the genes you're interested in studying in a file (genes.txt) with <i>n</i> lines where <i>n</i> is your number of genes. The gene symbols in that file should match those in refGene.bed. Then run the following to filter the reference genome .bed file so that it only contains your genes of interest:
 <pre>
