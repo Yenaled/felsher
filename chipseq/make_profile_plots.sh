@@ -21,13 +21,12 @@ make_bed_file () {
 
 # Make temporary bed files containing for our lists of genes
 eumyc_up_tmp=$(make_bed_file $r data/eumyc_up.txt)
-eumyc_down_tmp=$(make_bed_file $r data/eumyc_down.txt)
-hcc_up_tmp=$(make_bed_file $r data/hcc_up.txt)
-hcc_down_tmp=$(make_bed_file $r data/hcc_down.txt)
-
 trap "rm -f $eumyc_up_tmp" 0 2 3 15
+eumyc_down_tmp=$(make_bed_file $r data/eumyc_down.txt)
 trap "rm -f $eumyc_down_tmp" 0 2 3 15
+hcc_up_tmp=$(make_bed_file $r data/hcc_up.txt)
 trap "rm -f $hcc_up_tmp" 0 2 3 15
+hcc_down_tmp=$(make_bed_file $r data/hcc_down.txt)
 trap "rm -f $hcc_down_tmp" 0 2 3 15
 
 # Do the main deepTools analysis
