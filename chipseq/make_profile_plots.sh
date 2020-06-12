@@ -25,12 +25,10 @@ eumyc_down_tmp=$(make_bed_file $r data/eumyc_down.txt)
 hcc_up_tmp=$(make_bed_file $r data/hcc_up.txt)
 hcc_down_tmp=$(make_bed_file $r data/hcc_down.txt)
 
-eumyc_down=$(mktemp)
-trap "rm -f $eumyc_down" 0 2 3 15
-hcc_up=$(mktemp)
-trap "rm -f $hcc_up" 0 2 3 15
-hcc_down=$(mktemp)
-trap "rm -f $hcc_down" 0 2 3 15
+trap "rm -f $eumyc_up_tmp" 0 2 3 15
+trap "rm -f $eumyc_down_tmp" 0 2 3 15
+trap "rm -f $hcc_up_tmp" 0 2 3 15
+trap "rm -f $hcc_down_tmp" 0 2 3 15
 
 # Do the main deepTools analysis
 do_analysis() {
