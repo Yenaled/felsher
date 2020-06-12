@@ -54,12 +54,12 @@ do_analysis() {
 
     # Plot with deepTools
     computeMatrix reference-point --referencePoint TSS -S "$fc_file" -R "$final_bed_file_up" "$final_bed_file_down" --beforeRegionStartLength $padding --afterRegionStartLength $padding --skipZeros -o "./output/mat/${prefix}_log2FC.mat.gz"
-    computeMatrix reference-point --referencePoint TSS -S "$c_file" -R "$final_bed_file_up" "$final_bed_file_down" --beforeRegionStartLength $padding --afterRegionStartLength $padding --skipZeros -o "./output/mat/${prefix}_C.mat.gz
+    computeMatrix reference-point --referencePoint TSS -S "$c_file" -R "$final_bed_file_up" "$final_bed_file_down" --beforeRegionStartLength $padding --afterRegionStartLength $padding --skipZeros -o "./output/mat/${prefix}_C.mat.gz"
     plotProfile -m "./output/mat/${prefix}_log2FC.mat.gz" -out "./output/figures/profile_${prefix}.pdf" --colors red blue --regionsLabel Upregulated Downregulated
     tmp_outfile_sorted=$(mktemp)
     trap "rm -f $tmp_outfile_sorted" 0 2 3 15
     plotHeatmap -m "./output/mat/${prefix}_C.mat.gz" -out "./output/figures/heatmap_${prefix}_C.pdf" --colorMap Reds --whatToShow "heatmap and colorbar" --zMax 10 --outFileSortedRegions "$tmp_outfile_sorted"
-    computeMatrix reference-point --referencePoint TSS -S "$t_file" -R "$tmp_outfile_sorted" --beforeRegionStartLength $padding --afterRegionStartLength $padding --skipZeros -o "./output/mat/${prefix}_T.mat.gz
+    computeMatrix reference-point --referencePoint TSS -S "$t_file" -R "$tmp_outfile_sorted" --beforeRegionStartLength $padding --afterRegionStartLength $padding --skipZeros -o "./output/mat/${prefix}_T.mat.gz"
     plotHeatmap -m "./output/mat/${prefix}_T.mat.gz" -out "./output/figures/heatmap_${prefix}_T.pdf" --colorMap Reds --whatToShow "heatmap and colorbar" --zMax 10 --sortRegions no
 }
 
