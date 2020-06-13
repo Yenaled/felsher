@@ -70,10 +70,10 @@ The reference genome (e.g. for mm10 mouse) in .bed format is in the data/ folder
 We can create the log2 ratio (tumor vs. control) bigwig files in the data/ directory via the following:
 
 <pre>
-bigwigCompare --bigwig1 data/eumyc_h3k27ac_C.fc.signal.bigwig --bigwig2 data/eumyc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k27ac.bigwig
-bigwigCompare --bigwig1 data/eumyc_h3k4me3_C.fc.signal.bigwig --bigwig2 data/eumyc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k4me3.bigwig
-bigwigCompare --bigwig1 data/hcc_h3k27ac_C.fc.signal.bigwig --bigwig2 data/hcc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k27ac.bigwig
-bigwigCompare --bigwig1 data/hcc_h3k4me3_C.fc.signal.bigwig --bigwig2 data/hcc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k4me3.bigwig
+bigwigCompare --bigwig2 data/eumyc_h3k27ac_C.fc.signal.bigwig --bigwig1 data/eumyc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k27ac.bigwig
+bigwigCompare --bigwig2 data/eumyc_h3k4me3_C.fc.signal.bigwig --bigwig1 data/eumyc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_eumyc_h3k4me3.bigwig
+bigwigCompare --bigwig2 data/hcc_h3k27ac_C.fc.signal.bigwig --bigwig1 data/hcc_h3k27ac_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k27ac.bigwig
+bigwigCompare --bigwig2 data/hcc_h3k4me3_C.fc.signal.bigwig --bigwig1 data/hcc_h3k4me3_T.fc.signal.bigwig --outFileName data/log2ratio_hcc_h3k4me3.bigwig
 </pre>
 
 Next, we create the gene lists files (e.g. files containing upregulated/downregulated gene symbols) in the data/ directory. We do so as follows:
