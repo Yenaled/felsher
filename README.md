@@ -114,7 +114,7 @@ The output files from the preceding command (i.e. the processed files associated
   </li>
 </ul>
 
-Note: The smaller files are in this Github repository. However, the larger .tsv.gz files can be downloaded from:
+Note: The smaller files are in the tcga/ directory of this Github repository. However, the larger .tsv.gz files can be downloaded from:
 <ul>
   <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.processed.tumor_normal_lfc.tsv.gz</li>
   <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.processed.tumors_corrected.tsv.gz</li>
@@ -124,6 +124,7 @@ Note: The smaller files are in this Github repository. However, the larger .tsv.
 
 ## Obtaining TCGA clinical data
 
+For clinical data (for survival analysis), use the TCGA-CDR data file TCGA-CDR-SupplementalTableS1.xlsx which can be downloaded from the PanCanAtlas at https://api.gdc.cancer.gov/data/1b5f413e-a8d1-4d10-92eb-7c4ae739ed81 -- this file can also be found in the tcga/ directory of this GitHub repository.
 
 # Integrating Differential Gene Expression Analyses<a name="mouse_integration"></a>
 
@@ -313,6 +314,7 @@ Supplementary tables in paper were generated as follows:
   <li>BiocParallel 1.20.0</li>
   <li>ComplexHeatmap 2.2.0</li>
   <li>survival 3.1-12</li>
+  <li>RobustRankAggreg 1.1</li>
 </ul>
 
 ## Gene identifiers ortholog mapping
