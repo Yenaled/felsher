@@ -42,17 +42,75 @@ Pipeline readme here: https://github.com/Yenaled/felsher/blob/master/rnaseq/rna-
 
 # TCGA<a name="tcga"></a>
 
-## Obtaining TCGA data from GDC
+## Obtaining TCGA data from UCSC Xena Toil
 
-Here, we will go through an example of how to download data for the TCGA-LIHC study:
-1. Go to the GDC portal, navigate to the TCGA-LIHC repository, add all the biospecimen files (bcr xml format) and the RNA-seq files (HTSeq - Counts) to your cart, then download the manifest file (save the manifest file as gdc_manifest_lihc.txt).
-2. Using NCI's gdc-client software, run the following command to download the file into the path: tcga/data/lihc:
+Let's download TCGA data from UCSC Xena Toil and put them into the tcga/ directory.
 
-<pre>gdc-client download -m gdc_manifest_lihc.txt -d tcga/data/lihc</pre>
+We obtain log2(x+1)-transformed DESeq2-normalized RSEM values (for between-samples comparisons) as follows:
 
-3. Then, run the following command to organize the downloaded data (the organized data will be stored in tcga/organized/lihc):
+<pre>wget --continue https://toil.xenahubs.net/download/TCGA-GTEx-TARGET-gene-exp-counts.deseq2-normalized.log2.gz
+zcat < TCGA-GTEx-TARGET-gene-exp-counts.deseq2-normalized.log2.gz|awk -v OFS='\t' 'NR==1{for (i=1; i<=NF; i++) if (!($i ~ /TCGA/)) a[i]; 
+     else printf "%s%s", $i, OFS; print ""; next}
+     {for (i=1; i<=NF; i++) if (!(i in a)) printf "%s%s", $i, OFS; print "" }' | gzip > tcga/TCGA.rsem.deseq2.log2.tsv.gz</pre>
 
-<pre>tcga/organize_gdcdata.sh lihc</pre>
+We obtain gene-level log2(x+0.001)-trransformed TPM values (for within-samples comparisons) as follows:
+
+<pre>wget --continue https://toil.xenahubs.net/download/TcgaTargetGtex_rsem_gene_tpm.gz
+zcat < TcgaTargetGtex_rsem_gene_tpm.gz|awk -v OFS='\t' 'NR==1{for (i=1; i<=NF; i++) if (!($i ~ /TCGA/)) a[i]; 
+    else printf "%s%s", $i, OFS; print ""; next}
+    {for (i=1; i<=NF; i++) if (!(i in a) || i==1) printf "%s%s", $i, OFS; print "" }' | gzip > tcga/TCGA.rsem.TPM.log2.tsv.gz</pre>
+     
+Alternately, the TCGA normalized RSEM and TPM files are posted here (which you can download and put into the tcga/ directory):
+<ul>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.rsem.deseq2.log2.tsv.gz</li>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.rsem.TPM.log2.tsv.gz</li>
+</ul>
+
+## Obtaining TCGA batch identifier data (Tissue Source Site and Batch ID)
+
+The final results of these steps are already in this github repository, but here is how those final results wereobtained:
+
+1. Go to the GDC portal, navigate to the repository, add all the biospecimen files (bcr xml format) to your cart, then download the manifest file (save the manifest file as gdc_biospecimen.txt).
+2. Using NCI's gdc-client software, run the following command to download the file into the path: tcga/biospecimen:
+
+<pre>gdc-client download -m gdc_biospecimen.txt -d tcga/biospecimen</pre>
+
+3. Then, run the following command to format the downloaded batch identifiers into tcga/tcga_batches.csv:
+
+<pre>Rscript tcga/processgdc.r tcga/biospecimen tcga/tcga_batches.csv</pre>
+
+4. Finally, download TCGA sample information into the tcga/ directory (more details on TCGA sample information are described below).
+
+<pre>wget --continue https://gdc.cancer.gov/files/public/file/tcga_code_tables.zip
+unzip tcga_code_tables.zip bcrBatchCode.tsv
+unzip tcga_code_tables.zip tissueSourceSite.tsv
+mv bcrBatchCode.tsv tcga/
+mv tissueSourceSite.tsv tcga/</pre>
+
+## Processing downloaded TCGA data
+
+Now, we can process the TCGA data to only include samples of interest and to batch-correct batch ID and tissue source site information. Note that TCGA sample information (e.g. tissue source sites, tumor types, tumor vs. normal, etc.) is described at https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/ and how that information is encoded into TCGA barcodes can be found at https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/
+
+Process TCGA data to get our final batch-corrected matrix:
+
+<pre>Rscript tcga/processTCGAbatches.r tcga/TCGA.rsem.deseq2.log2.tsv.gz tcga/bcrBatchCode.tsv tcga/tissueSourceSite.tsv tcga/ tcga/tcga_batches.csv</pre>
+
+The output files from the preceding command (i.e. the processed files associated with the batch-corrected data) will include: TODO FINISH
+<ul>
+  <li>tumor_normal</li>
+  <li>info_corrected.csv</li>
+  <li></li>
+  <li>tumors_corrected.tsv.gz</li>
+  </ul>can also be found here (which you can download and put into the tcga/ directory):
+<ul>
+  <li></li>
+</ul>
+  
+
+## Obtaining TCGA clinical data
+
+
+
 
 4. Then, run the following command to further process the data (which will be outputted into tcga/processed/lihc):
 
