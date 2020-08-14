@@ -91,34 +91,39 @@ mv tissueSourceSite.tsv tcga/</pre>
 
 Now, we can process the TCGA data to only include samples of interest and to batch-correct batch ID and tissue source site information. Note that TCGA sample information (e.g. tissue source sites, tumor types, tumor vs. normal, etc.) is described at https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/ and how that information is encoded into TCGA barcodes can be found at https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/
 
-Process TCGA data to get our final batch-corrected matrix:
+Process TCGA data to get our final batch-corrected output in the tcga/ directory:
 
-<pre>Rscript tcga/processTCGAbatches.r tcga/TCGA.rsem.deseq2.log2.tsv.gz tcga/bcrBatchCode.tsv tcga/tissueSourceSite.tsv tcga/ tcga/tcga_batches.csv</pre>
+<pre>Rscript tcga/processTCGAbatches.r tcga/TCGA.rsem.deseq2.log2.tsv.gz tcga/bcrBatchCode.tsv tcga/tissueSourceSite.tsv tcga/TCGA.processed. tcga/tcga_batches.csv</pre>
 
-The output files from the preceding command (i.e. the processed files associated with the batch-corrected data) will include: TODO FINISH
+The output files from the preceding command (i.e. the processed files associated with the batch-corrected data) will include:
+
 <ul>
-  <li>tumor_normal</li>
-  <li>info_corrected.csv</li>
-  <li></li>
-  <li>tumors_corrected.tsv.gz</li>
-  </ul>can also be found here (which you can download and put into the tcga/ directory):
+  <li>TCGA.processed.tumor_normal_lfc.tsv.gz - Log2 fold changes of paired tumor versus matched normal</li>
+  <li>Batch correction:
+    <ul>
+      <li>TCGA.processed.info_corrected.csv - Information about cancer types, tumor/normal, batches, etc. for each sample</li>
+      <li>TCGA.processed.batch_effects_view.pdf - PCA plots of the result of batch correction</li>
+      <li>TCGA.processed.tumors_corrected.tsv.gz - Tumor sample expression data</li>
+    </ul>
+  </li>
+  <li>Non-batch corrected:
+    <ul>
+      <li>TCGA.processed.info.csv - Information about cancer types, tumor/normal, batches, etc. for each sample</li>
+      <li>TCGA.processed.tumors.tsv.gz - Tumor sample expression data</li>
+    </ul>
+  </li>
+</ul>
+
+Note: The smaller files are in this Github repository. However, the larger .tsv.gz files can be downloaded from:
 <ul>
-  <li></li>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.processed.tumor_normal_lfc.tsv.gz</li>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.processed.tumors_corrected.tsv.gz</li>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/TCGA.processed.tumors.tsv.gz</li>
 </ul>
   
 
 ## Obtaining TCGA clinical data
 
-
-
-
-4. Then, run the following command to further process the data (which will be outputted into tcga/processed/lihc):
-
-<pre>tcga/processgdc.sh lihc</pre>
-
-5. Finally, run the following command to normalize the data (via DESeq2) with batch-correction. The normalized counts will be outputted into tcga/normalized/lihc.
-
-<pre>tcga/normalize.sh lihc</pre>
 
 # Integrating Differential Gene Expression Analyses<a name="mouse_integration"></a>
 
