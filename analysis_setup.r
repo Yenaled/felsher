@@ -23,7 +23,8 @@ ensembl_human_mapping <- read.csv("./rnaseq/annotation/human_ensembl_ids.csv", s
 
 # Set some paths
 microarray_directory <- "./microarray/processed_microarray/tissue/"
-tcga_directory <- "./tcga/normalized/"
+tcga_lfc_file <- "./tcga/TCGA.processed.tumor_normal_lfc.tsv.gz"
+tcga_info_file <- "./tcga/TCGA.processed.info_corrected.csv"
 
 # Setup some variables
 mouse_tissue_geneset_names <- "liver,kidney,spleen,lung,embryonic stem line Bruce4 p13,embryonic stem line V26 2 p16"
