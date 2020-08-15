@@ -139,12 +139,6 @@ The following command will integrate information from multiple differential gene
 Run the following script for mouse tissue enrichment analysis. Output folder: output/enrichr_mouse_tissue
 <pre>Rscript analyze_mouse_tissue_enrichment.r</pre>
 
-## Mouse DE genes in TCGA<a name="mouse_tcga"></a>
-
-Run the following script to get the expression log2 fold changes of mouse DE genes in TCGA human cancer samples (comparing human tumor with matched normal). Output folder: output/mouse_tcga
-
-<pre>Rscript analyze_mouse_genes_tcga.r</pre>
-
 ## Mouse DE genes GO analysis<a name="mouse_de_go"></a>
 
 Run the following script to perform GSEA of GO terms for mouse DE genes. For the top enriched GO terms, the script will also perform GO overrepresentation analysis for relevant mouse gene atlas tissue gene sets. This is to assess whether enriched GO terms in mouse DE genes have tissue-lineage dependence. Output folder: output/enrichr_mouse_go
@@ -193,13 +187,6 @@ Figures in paper were generated as follows:
           <li>Graphpad Prism file: prism/mouse_tissue_enrichment.pzfx</li>
           <li>Raw output: output/enrichr_mouse_tissue/</li>
           <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
-        </ul>
-      </li>
-      <li>E:
-        <ul>
-          <li>Graphpad Prism file: prism/mouse_tcga.pzfx</li>
-          <li>Raw output: output/mouse_tcga/</li>
-          <li><a href="#mouse_tcga">Link to method</a></li>
         </ul>
       </li>
     </ul>
