@@ -4,8 +4,8 @@
 3. [TCGA](#tcga)
 4. [Integrating Differential Gene Expression Analyses](#mouse_integration)
 5. [Downstream Analyses of Mouse Differential Gene Expression](#mouse_downstream_analyses)
-6. [CCLE](#ccle)
-7. [Machine Learning](#ml)
+6. [Pan-Cancer Rank Aggregation](#rank)
+7. [CCLE](#ccle)
 8. [ChIP-Seq](#chipseq)
 9. [Figures](#figures)
 10. [Appendix](#appendix)
@@ -157,9 +157,19 @@ The GSEA results will be outputted in go_gsea.xlsx and the top GO terms will be 
 
 <pre>Rscript analyze_mouse_go_enrichment.r output/enrichr_mouse_go/go_gsea.xlsx data/go_term_collapse.csv</pre>
 
-# CCLE<a name="ccle"></a>
+# Pan-Cancer Rank Aggregation<a name="rank"></a>
 
-# Machine Learning<a name="ml"></a>
+## Rank Aggregation
+
+To generate pair-wise correlations with MYC and to perform rank aggregation with Robust Rank Aggregation (RRA) of the pair-wise Pearson correlation coefficients across all TCGA cancer types, run the following:
+
+<pre>Rscript rankaggregation.r tcga/TCGA.processed.tumors_corrected.tsv.gz tcga/TCGA.processed.info_corrected.csv output/tcga_correlation/</pre>
+
+The output files will be located in output/tcga_correlation/ -- the file myc_rra.csv contains the RRA p-values and the file myc_correlations.csv (which you can compress to make myc_correlations.csv.gz since the file is rather large) contains the pair-wise Pearson correlation coefficients.
+
+## Combined Human + Mouse Signature
+
+# CCLE<a name="ccle"></a>
 
 # ChIP-Seq<a name="chipseq"></a>
 
