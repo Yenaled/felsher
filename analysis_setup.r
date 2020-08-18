@@ -20,6 +20,7 @@ genes_de_up_ids <- read.table("./output/mouse_de/de_genes_up_ids.txt", stringsAs
 genes_de_down_ids <- read.table("./output/mouse_de/de_genes_down_ids.txt", stringsAsFactors=FALSE, header=TRUE, sep="\t")
 orthologs_ids <- read.csv("./rnaseq/annotation/human_mouse_orthologs_ids.csv", stringsAsFactors=FALSE)
 ensembl_human_mapping <- read.csv("./rnaseq/annotation/human_ensembl_ids.csv", stringsAsFactors=FALSE)
+ensembl_human_symbols_mapping <- read.csv("./rnaseq/annotation/hg19_ensembl.csv", stringsAsFactors=FALSE)
 
 # Set some paths
 microarray_directory <- "./microarray/processed_microarray/tissue/"
