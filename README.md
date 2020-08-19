@@ -161,7 +161,13 @@ To generate pair-wise correlations with MYC and to perform rank aggregation with
 
 The output files will be located in output/tcga_correlation/ -- the file myc_rra.csv contains the RRA p-values and the file myc_correlations.csv (which you can compress to make myc_correlations.csv.gz since the file is rather large) contains the pair-wise Pearson correlation coefficients.
 
-## Combined Human + Mouse Signature
+## Combined Human + Mouse Signature<a name="combinedsig"></a>
+
+To combine the human and mouse signatures to generate a signature containing genes differentially expressed (in the same direction) in at least 4 out of 5 MYC mouse tumor models and with median Pearson's r > 0.30 (and RRA adjusted p-value < 0.05) across the TCGA cancer types, run the following:
+
+<pre>Rscript integrative_signature.r</pre>
+
+The output files will be found in output/integrative_signature/
 
 # CCLE<a name="ccle"></a>
 
@@ -209,6 +215,54 @@ Figures in paper were generated as follows:
             </ul>
           </li>
           <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>A:
+        <ul>
+          <li>PDF file: output/integrative_signature/volcano.pdf</li>
+          <li>Raw output:
+            <ul>
+              <li>output/integrative_signature/correlation_data.csv</li>
+            </ul>
+          </li>
+          <li><a href="#rank">Link to method</a></li>
+        </ul>
+      </li>
+      <li>B:
+        <ul>
+          <li>Self-created figure</li>
+          <li>Raw output:
+            <ul>
+              <li>output/integrative_signature/log.txt</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+      <li>C:
+        <ul>
+          <li>STRING: functional protein association networks - string-db.org</li>
+          <li>Procedure:
+            <ul>
+              <li>Copy and paste list of gene symbols from output/integrative_signature/signature.csv, select Homo Sapiens as organism, set "meaning of network edges" to be "confidence", select all for "active interaction sources", set "minimum required interaction score" to be 0.400, and set "max number of interactors to show" to be "query proteins only".</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>D:
+        <ul>
+          <li>Self-created figure</li>
+          <li>Raw output:
+            <ul>
+              <li>output/integrative_signature/signature_go_bp.xlsx</li>
+              <li>output/integrative_signature/signature_go_mouse_cells.xlsx</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsig">Link to method</a></li>
         </ul>
       </li>
     </ul>
