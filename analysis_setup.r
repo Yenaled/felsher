@@ -26,6 +26,7 @@ ensembl_human_symbols_mapping <- read.csv("./rnaseq/annotation/hg19_ensembl.csv"
 microarray_directory <- "./microarray/processed_microarray/tissue/"
 tcga_lfc_file <- "./tcga/TCGA.processed.tumor_normal_lfc.tsv.gz"
 tcga_info_file <- "./tcga/TCGA.processed.info_corrected.csv"
+tcga_rra_file <- "./output/tcga_correlation/myc_rra.csv"
 
 # Setup some variables
 mouse_tissue_geneset_names <- "liver,kidney,spleen,lung,embryonic stem line Bruce4 p13,embryonic stem line V26 2 p16"
