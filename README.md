@@ -338,6 +338,42 @@ Supplementary tables in paper were generated as follows:
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>--UNDER CONSTRUCTION--
+        <ul>
+          <li>--UNDER CONSTRUCTION--</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/integrative_signature/signature.csv
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/integrative_signature/signature_go_bp.xlsx
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/integrative_signature/signature_go_mouse_cells.xlsx
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 # Appendix<a name="appendix"></a>
