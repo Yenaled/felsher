@@ -100,7 +100,7 @@ The data was obtained from https://asntech.org/dbsuper/
 
 The following commands were used to convert further process the files above (convert the mm9 to mm10 coordinates via liftOver; combine gene symbol, tissue name, and SE coordinates into a single file):
 
-<pre>unzip all_mm9_bed.zip</pre>
+<pre></pre>
 
 The resulting file can be found here: 
 
