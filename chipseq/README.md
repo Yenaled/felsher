@@ -95,8 +95,8 @@ Finally, run the analysis to make heatmaps and metagene plots:
 
 The data was obtained from https://asntech.org/dbsuper/
 
-* The zip file containing the BED files for the mm9 SEs can be found here: . It was originally obtained via the following link: https://asntech.org/dbsuper/data/bed/mm9/all_mm9_bed.zip
-* The mapping between SE ID and gene symbol can be found here: . It was originally obtained via going to the <a href="https://asntech.org/dbsuper/adv_search.php">Detailed Search</a> feature of the dbSUPER website, selecting "Mouse (mm9)" as the genome, and clicking Search.
+* The zip file containing the BED files for the mm9 SEs can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/all_mm9_bed.zip -- it was originally obtained via the following link: https://asntech.org/dbsuper/data/bed/mm9/all_mm9_bed.zip
+* The mapping between SE ID and gene symbol can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/superenhancer_gene_annotations.csv -- it was originally obtained via going to the <a href="https://asntech.org/dbsuper/adv_search.php">Detailed Search</a> feature of the dbSUPER website, selecting "Mouse (mm9)" as the genome, and clicking Search.
 
 The following commands were used to convert the mm9 BED files to mm10 coordinates:
 
@@ -104,4 +104,4 @@ The following commands were used to convert the mm9 BED files to mm10 coordinate
 
 The data was obtained from http://sea.edbc.org/
 
-* The mouse mm10 SEs BED file can be found here: . It was obtained by navigating to "Download Data" and then selecting SEA00201	under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
+* The mouse mm10 SEs BED file can be found (gzip-compressed) here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201.bed.gz -- it was orriginally obtained by navigating to "Download Data" via http://sea.edbc.org/ and then selecting SEA00201 under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
