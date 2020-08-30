@@ -108,4 +108,4 @@ The resulting file can be found here:
 
 The data was obtained from http://sea.edbc.org/
 
-* The mouse mm10 SEs BED file can be found (gzip-compressed) here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201.bed.gz -- it was orriginally obtained by navigating to "Download Data" via http://sea.edbc.org/ and then selecting SEA00201 under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
+* The mouse mm10 SEs BED file can be found (gzip-compressed) here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201.bed.gz -- it was originally obtained by navigating to "Download Data" via http://sea.edbc.org/ and then selecting SEA00201 under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
