@@ -98,7 +98,11 @@ The data was obtained from https://asntech.org/dbsuper/
 * The zip file containing the BED files for the mm9 SEs can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/all_mm9_bed.zip -- it was originally obtained via the following link: https://asntech.org/dbsuper/data/bed/mm9/all_mm9_bed.zip
 * The mapping between SE ID and gene symbol can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/superenhancer_gene_annotations.csv -- it was originally obtained via going to the <a href="https://asntech.org/dbsuper/adv_search.php">Detailed Search</a> feature of the dbSUPER website, selecting "Mouse (mm9)" as the genome, and clicking Search.
 
-The following commands were used to convert the mm9 BED files to mm10 coordinates:
+The following commands were used to convert further process the files above (convert the mm9 to mm10 coordinates via liftOver; combine gene symbol, tissue name, and SE coordinates into a single file):
+
+<pre></pre>
+
+The resulting file can be found here: 
 
 ## SEA
 
