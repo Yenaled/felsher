@@ -100,9 +100,11 @@ The data was obtained from https://asntech.org/dbsuper/
 
 The following commands were used to convert further process the files above (convert the mm9 to mm10 coordinates via liftOver; combine gene symbol, tissue name, and SE coordinates into a single file):
 
-<pre></pre>
+<pre>Rscript process_bed_zip.r data/all_mm9_bed.zip data/dbSUPER_mm9.bed data/superenhancer_gene_annotations.csv</pre>
 
-The resulting file can be found here: 
+Next, feed the resulting data/dbSUPER_mm9.bed output file into UCSC's liftOver tool: https://genome.ucsc.edu/cgi-bin/hgLiftOver setting the options as follows. Original Genome: Mouse; Original Assembly: "July 2007 (NCBI37/mm9)", New Genome: Mouse, New Assembly: "Dec. 2011 (GRCm38/mm10)". Then download the resulting file (now in mm10 coordinates) as data/dbSUPER_mm10.bed
+
+The final mm10 file of the SE records can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/dbSUPER_mm10.bed
 
 ## SEA
 
