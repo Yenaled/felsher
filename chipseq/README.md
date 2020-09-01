@@ -129,3 +129,17 @@ Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_up.bed data/h
 Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_down.bed data/hcc_down.txt
 Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_up.bed data/eumyc_up.txt
 Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_down.bed data/eumyc_down.txt</pre>
+
+<pre>do_analysis() {
+    computeMatrix scale-regions -S "$3" -R "$2" -o "./output/mat/${1}_log2FC.mat.gz"
+}
+
+do_analysis eumyc_h3k27ac_upgenes_dbsuper dbSUPER_eumyc_up.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_upgenes_dbsuper dbSUPER_hcc_up.bed data/log2ratio_hcc_h3k27ac.bigwig
+do_analysis eumyc_h3k27ac_downgenes_dbsuper dbSUPER_eumyc_down.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_downgenes_dbsuper dbSUPER_hcc_down.bed data/log2ratio_hcc_h3k27ac.bigwig
+
+do_analysis eumyc_h3k27ac_upgenes_sea SEA_eumyc_up.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_upgenes_sea SEA_hcc_up.bed data/log2ratio_hcc_h3k27ac.bigwig
+do_analysis eumyc_h3k27ac_downgenes_sea SEA_eumyc_down.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_downgenes_sea SEA_hcc_down.bed data/log2ratio_hcc_h3k27ac.bigwig</pre>
