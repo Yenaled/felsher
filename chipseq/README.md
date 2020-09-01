@@ -117,3 +117,15 @@ Finally, execute the following command to finish processing the BED file (i.e. r
 <pre>zcat < data/SEA00201.bed.gz|awk -v OFS="\t" -F"\t" '{print $2,$3,$4,$16,$7}' > data/SEA00201_processed.bed</pre>
 
 The final SE file can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201_processed.bed
+
+## Make files for graphing
+
+<pre>Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_hcc_up.bed data/hcc_up.txt
+Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_hcc_down.bed data/hcc_down.txt
+Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_eumyc_up.bed data/eumyc_up.txt
+Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_eumyc_down.bed data/eumyc_down.txt
+
+Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_up.bed data/hcc_up.txt
+Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_down.bed data/hcc_down.txt
+Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_up.bed data/eumyc_up.txt
+Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_down.bed data/eumyc_down.txt</pre>
