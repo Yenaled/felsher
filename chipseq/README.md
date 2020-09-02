@@ -140,3 +140,4 @@ do_analysis hcc_h3k27ac_dbsuper "dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed dbS
 do_analysis eumyc_h3k27ac_sea "SEA_eumyc_up.bed SEA_eumyc_down.bed SEA_hcc_up.bed SEA_hcc_down.bed" data/log2ratio_eumyc_h3k27ac.bigwig
 do_analysis hcc_h3k27ac_sea "SEA_eumyc_up.bed SEA_eumyc_down.bed SEA_hcc_up.bed SEA_hcc_down.bed" data/log2ratio_hcc_h3k27ac.bigwig</pre>
 
+<pre>Rscript plotSE.r</pre>
