@@ -131,7 +131,7 @@ Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_up.bed data
 Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_down.bed data/eumyc_down.txt</pre>
 
 <pre>do_analysis() {
-    computeMatrix scale-regions -S "$3" -R "$2" -o "./output/mat/${1}_log2FC.mat.gz"
+    computeMatrix scale-regions -S "$3" -R $2 -o "./output/mat/${1}_log2FC.mat.gz"
 }
 
 do_analysis eumyc_h3k27ac_dbsuper "dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed dbSUPER_hcc_up.bed dbSUPER_hcc_down.bed" data/log2ratio_eumyc_h3k27ac.bigwig
