@@ -97,11 +97,18 @@ print(tcga_rra_data[tcga_rra_data$down & tcga_rra_data$Freq == 5,c("Symbol","pad
 # Write out TCGA correlation data
 write.csv(tcga_rra_data, file=paste(output_dir, "correlation_data.csv", sep=""))
 
+# Write out formatted TCGA correlation data
+write.csv(tcga_rra_data[,c("Symbol","pval","padj","median_pearson")], file=paste(output_dir, "correlation_data_formatted.csv", sep=""))
+
 # Write out final signature
 final_signature <- tcga_rra_data[tcga_rra_data$MYC_Correlated & tcga_rra_data$up,]
 final_signature <- final_signature[,c("Symbol","pval","padj","median_pearson","Freq")]
 colnames(final_signature) <- c("Symbol","P-Value","Adjusted P-Value","Median Pearson","Number of MYC mouse experiments in which the gene is differentially expressed")
 write.csv(final_signature, file=paste(output_dir, "signature.csv", sep=""))
+
+# Write out other signatures
+write.csv(tcga_rra_data[!(rownames(tcga_rra_data) %in% rownames(final_signature)) & tcga_rra_data$up,"Symbol",drop=FALSE], file=paste(output_dir, "signature_tumorigenesis.csv", sep=""))
+write.csv(tcga_rra_data[!(rownames(tcga_rra_data) %in% rownames(final_signature)) & tcga_rra_data$MYC_Correlated,"Symbol",drop=FALSE], file=paste(output_dir, "signature_myc_correlation.csv", sep=""))
 
 # Print out info about number of genes in signatures
 print("Number of genes in signatures")
