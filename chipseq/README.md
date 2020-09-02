@@ -106,38 +106,18 @@ Next, feed the resulting data/dbSUPER_mm9.bed output file into UCSC's liftOver t
 
 The final mm10 file of the SE records can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/dbSUPER_mm10.bed
 
-## SEA
-
-The data was obtained from http://sea.edbc.org/
-
-* The mouse mm10 SEs BED file can be found (gzip-compressed) here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201.bed.gz -- it was originally obtained by navigating to "Download Data" via http://sea.edbc.org/ and then selecting SEA00201 under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
-
-Finally, execute the following command to finish processing the BED file (i.e. remove unnecessary columns, remove non-SE rows):
-
-<pre>zcat < data/SEA00201.bed.gz|awk -F'\t' '{if($19=="SE") print $0}'|awk -v OFS="\t" -F"\t" '{print $2,$3,$4,$16,$7}' > data/SEA00201_processed.bed</pre>
-
-The final SE file can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201_processed.bed
-
 ## Make files for graphing
 
 <pre>Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_hcc_up.bed data/hcc_up.txt
 Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_hcc_down.bed data/hcc_down.txt
 Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_eumyc_up.bed data/eumyc_up.txt
-Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_eumyc_down.bed data/eumyc_down.txt
-
-Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_up.bed data/hcc_up.txt
-Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_hcc_down.bed data/hcc_down.txt
-Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_up.bed data/eumyc_up.txt
-Rscript merge_bed_with_genes.r data/SEA00201_processed.bed SEA_eumyc_down.bed data/eumyc_down.txt</pre>
+Rscript merge_bed_with_genes.r data/dbSUPER_mm10.bed dbSUPER_eumyc_down.bed data/eumyc_down.txt</pre>
 
 <pre>do_analysis() {
     computeMatrix scale-regions -S "$3" -R $2 -o "./output/mat/${1}_log2FC.mat.gz"
 }
 
 do_analysis eumyc_h3k27ac_dbsuper "dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed dbSUPER_hcc_up.bed dbSUPER_hcc_down.bed" data/log2ratio_eumyc_h3k27ac.bigwig
-do_analysis hcc_h3k27ac_dbsuper "dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed dbSUPER_hcc_up.bed dbSUPER_hcc_down.bed" data/log2ratio_hcc_h3k27ac.bigwig
-
-do_analysis eumyc_h3k27ac_sea "SEA_eumyc_up.bed SEA_eumyc_down.bed SEA_hcc_up.bed SEA_hcc_down.bed" data/log2ratio_eumyc_h3k27ac.bigwig
-do_analysis hcc_h3k27ac_sea "SEA_eumyc_up.bed SEA_eumyc_down.bed SEA_hcc_up.bed SEA_hcc_down.bed" data/log2ratio_hcc_h3k27ac.bigwig</pre>
+do_analysis hcc_h3k27ac_dbsuper "dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed dbSUPER_hcc_up.bed dbSUPER_hcc_down.bed" data/log2ratio_hcc_h3k27ac.bigwig</pre>
 
 <pre>Rscript plotSE.r</pre>
