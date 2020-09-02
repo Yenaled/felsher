@@ -173,6 +173,8 @@ The output files will be found in output/integrative_signature/
 
 # ChIP-Seq<a name="chipseq"></a>
 
+Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
+
 # Figures<a name="figures"></a>
 
 Figures in paper were generated as follows:
@@ -199,7 +201,13 @@ Figures in paper were generated as follows:
   </li>
   <li>
     <ul>
-      <li>Under construction</li>
+      <li>A/B:
+        <ul>
+          <li>PDF files: chipseq/output/figures</li>
+          <li>Raw output: chipseq/output/mat</li>
+          <li><a href="#chipseq">Link to method</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>
@@ -284,6 +292,17 @@ Supplementary figures in paper were generated as follows:
         <ul>
           <li>Raw output: output/mouse_de/</li>
           <li><a href="#mouse_integration">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>chipseq/output/figures/plot_eumyc_h3k27ac_dbsuper_using_hccgenes.pdf
+        chipseq/output/figures/plot_hcc_h3k27ac_dbsuper_using_eumycgenes.pdf
+        <ul>
+          <li>Raw output: chipseq/output/mat/eumyc_h3k27ac_dbsuper_log2FC.mat.gz, chipseq/output/mat/hcc_h3k27ac_dbsuper_log2FC.mat.gz</li>
+          <li><a href="#chipseq">Link to method</a></li>
         </ul>
       </li>
     </ul>
