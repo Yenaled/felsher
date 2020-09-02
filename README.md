@@ -359,9 +359,9 @@ Supplementary tables in paper were generated as follows:
   </li>
   <li>
     <ul>
-      <li>--UNDER CONSTRUCTION--
+      <li>output/integrative_signature/correlation_data_formatted.csv
         <ul>
-          <li>--UNDER CONSTRUCTION--</li>
+          <li><a href="#combinedsig">Link to method</a></li>
         </ul>
       </li>
     </ul>
@@ -369,6 +369,24 @@ Supplementary tables in paper were generated as follows:
   <li>
     <ul>
       <li>output/integrative_signature/signature.csv
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/integrative_signature/signature_myc_correlation.csv
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>output/integrative_signature/signature_tumorigenesis.csv
         <ul>
           <li><a href="#combinedsig">Link to method</a></li>
         </ul>
