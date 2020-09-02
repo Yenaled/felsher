@@ -143,3 +143,14 @@ do_analysis eumyc_h3k27ac_upgenes_sea SEA_eumyc_up.bed data/log2ratio_eumyc_h3k2
 do_analysis hcc_h3k27ac_upgenes_sea SEA_hcc_up.bed data/log2ratio_hcc_h3k27ac.bigwig
 do_analysis eumyc_h3k27ac_downgenes_sea SEA_eumyc_down.bed data/log2ratio_eumyc_h3k27ac.bigwig
 do_analysis hcc_h3k27ac_downgenes_sea SEA_hcc_down.bed data/log2ratio_hcc_h3k27ac.bigwig</pre>
+
+<pre>do_analysis() {
+    computeMatrix scale-regions -S "$4" -R "$2" "$3" -o "./output/mat/${1}_log2FC.mat.gz"
+}
+
+do_analysis eumyc_h3k27ac_dbsuper dbSUPER_eumyc_up.bed dbSUPER_eumyc_down.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_dbsuper dbSUPER_hcc_up.bed dbSUPER_hcc_down.bed data/log2ratio_hcc_h3k27ac.bigwig
+
+do_analysis eumyc_h3k27ac_sea SEA_eumyc_up.bed SEA_eumyc_down.bed data/log2ratio_eumyc_h3k27ac.bigwig
+do_analysis hcc_h3k27ac_sea SEA_hcc_up.bed SEA_hcc_down.bed data/log2ratio_hcc_h3k27ac.bigwig</pre>
+
