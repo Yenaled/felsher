@@ -1,0 +1,120 @@
+[1] "plot_hcc_h3k27ac_dbsuper.pdf"
+[1] "Upregulated genes: 327 genes (n = 813 superenhancers)"
+[1] "Downregulated genes: 353 genes (n = 757 superenhancers)"
+[1] "Upregulated genes top fold changes:"
+         Gene Log2 Fold Change               Tissue
+1037   Trim71         2.109432 Embryonic_stem_cells
+889     Hif3a         1.910693          E14.5_Heart
+596     Acss1         1.857998                Heart
+929  Serpinh1         1.798879          E14.5_Heart
+927  Serpinh1         1.797041                Heart
+[1] "Downregulated genes top fold changes:"
+        Gene Log2 Fold Change                          Tissue
+1847 Aldh1l1        -1.478944                           Liver
+1140 Mettl7b        -1.422740                           Liver
+1740   Hspb8        -1.290785 Transit-amplifying_cells_(TACs)
+1642    Dio1        -1.251924                           Liver
+1765   Gna12        -1.245652                           Liver
+
+	Welch Two Sample t-test
+
+data:  data[data$regulation == up_label, "mean"] and data[data$regulation == down_label, "mean"]
+t = 30.432, df = 1564.2, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.5313756 0.6045941
+sample estimates:
+ mean of x  mean of y 
+ 0.3509169 -0.2170679 
+
+[1] "--------------"
+[1] "plot_eumyc_h3k27ac_dbsuper.pdf"
+[1] "Upregulated genes: 506 genes (n = 1079 superenhancers)"
+[1] "Downregulated genes: 594 genes (n = 1819 superenhancers)"
+[1] "Upregulated genes top fold changes:"
+       Gene Log2 Fold Change         Tissue
+1086  Ccnd1         2.332747     E14.5_Limb
+1168  Gins2         1.312802    pro-B_Cells
+714   Fabp4         1.228302          Heart
+955  Ablim2         1.160475         Cortex
+656   Nacc2         1.159653 Olfactory_bulb
+[1] "Downregulated genes top fold changes:"
+     Gene Log2 Fold Change      Tissue
+2751  Jun        -2.144911 E14.5_Heart
+2756  Jun        -2.114315  Macrophage
+2753  Jun        -2.106171      Spleen
+2750  Jun        -2.049385       Heart
+2752  Jun        -2.044600   Intestine
+
+	Welch Two Sample t-test
+
+data:  data[data$regulation == up_label, "mean"] and data[data$regulation == down_label, "mean"]
+t = 39.3, df = 2673.5, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.5642298 0.6234910
+sample estimates:
+ mean of x  mean of y 
+ 0.1468958 -0.4469646 
+
+[1] "--------------"
+[1] "plot_hcc_h3k27ac_dbsuper_using_eumycgenes.pdf"
+[1] "Upregulated genes: 506 genes (n = 1079 superenhancers)"
+[1] "Downregulated genes: 594 genes (n = 1819 superenhancers)"
+[1] "Upregulated genes top fold changes:"
+         Gene Log2 Fold Change      Tissue
+1128 Serpinh1         1.798879 E14.5_Heart
+1126 Serpinh1         1.797041       Heart
+1130 Serpinh1         1.780034  E14.5_Limb
+1132 Serpinh1         1.774056 E14.5_Brain
+609      Scd2         1.720352 pro-B_Cells
+[1] "Downregulated genes top fold changes:"
+        Gene Log2 Fold Change Tissue
+3088 Fam169b       -1.1348126  Liver
+3092 Fam169b       -1.0463954 Spleen
+2050   Snx29       -1.0326621 Kidney
+1377   Ephx1       -0.9283087  Liver
+3090 Fam169b       -0.9043141 Thymus
+
+	Welch Two Sample t-test
+
+data:  data[data$regulation == up_label, "mean"] and data[data$regulation == down_label, "mean"]
+t = 0.42459, df = 1811.8, p-value = 0.6712
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.02054229  0.03189401
+sample estimates:
+mean of x mean of y 
+0.1047020 0.0990261 
+
+[1] "--------------"
+[1] "plot_eumyc_h3k27ac_dbsuper_using_hccgenes.pdf"
+[1] "Upregulated genes: 327 genes (n = 813 superenhancers)"
+[1] "Downregulated genes: 353 genes (n = 757 superenhancers)"
+[1] "Upregulated genes top fold changes:"
+        Gene Log2 Fold Change      Tissue
+957    Gins2         1.312802 pro-B_Cells
+143   Arid3a         1.218704    Myotubes
+929 Serpinh1         1.137571 E14.5_Heart
+927 Serpinh1         1.134282       Heart
+931 Serpinh1         1.120534  E14.5_Limb
+[1] "Downregulated genes top fold changes:"
+       Gene Log2 Fold Change     Tissue
+1771   Gsap        -1.896781 Macrophage
+1916  Cyb5b        -1.599377     Thymus
+1540   Scd1        -1.377578     Spleen
+1343   A1bg        -1.322612   Th_Cells
+1800 Clec2d        -1.321174     Kidney
+
+	Welch Two Sample t-test
+
+data:  data[data$regulation == up_label, "mean"] and data[data$regulation == down_label, "mean"]
+t = -1.5856, df = 1559.7, p-value = 0.113
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.077218359  0.008182775
+sample estimates:
+  mean of x   mean of y 
+-0.08164477 -0.04712698 
+
+[1] "--------------"
