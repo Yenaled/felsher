@@ -112,9 +112,9 @@ The data was obtained from http://sea.edbc.org/
 
 * The mouse mm10 SEs BED file can be found (gzip-compressed) here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201.bed.gz -- it was originally obtained by navigating to "Download Data" via http://sea.edbc.org/ and then selecting SEA00201 under DataSourceID (Date "2018-06-12"; Species "Mouse"; Description "mouse super-enhancers by SEA").
 
-Finally, execute the following command to finish processing the BED file (i.e. remove unnecessary columns):
+Finally, execute the following command to finish processing the BED file (i.e. remove unnecessary columns, remove non-SE rows):
 
-<pre>zcat < data/SEA00201.bed.gz|awk -v OFS="\t" -F"\t" '{print $2,$3,$4,$16,$7}' > data/SEA00201_processed.bed</pre>
+<pre>zcat < data/SEA00201.bed.gz|awk -F'\t' '{if($19=="SE") print $0}'|awk -v OFS="\t" -F"\t" '{print $2,$3,$4,$16,$7}' > data/SEA00201_processed.bed</pre>
 
 The final SE file can be found here: https://github.com/Yenaled/felsher/blob/master/chipseq/data/SEA00201_processed.bed
 
