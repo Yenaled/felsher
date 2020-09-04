@@ -8,6 +8,11 @@
 596     Acss1         1.857998                Heart
 929  Serpinh1         1.798879          E14.5_Heart
 927  Serpinh1         1.797041                Heart
+931  Serpinh1         1.780034           E14.5_Limb
+933  Serpinh1         1.774056          E14.5_Brain
+561      Scd2         1.720352          pro-B_Cells
+557      Scd2         1.698676               Testis
+559      Scd2         1.520642               Cortex
 [1] "Downregulated genes top fold changes:"
         Gene Log2 Fold Change                          Tissue
 1847 Aldh1l1        -1.478944                           Liver
@@ -15,6 +20,11 @@
 1740   Hspb8        -1.290785 Transit-amplifying_cells_(TACs)
 1642    Dio1        -1.251924                           Liver
 1765   Gna12        -1.245652                           Liver
+1375   Prodh        -1.223301                           Liver
+1917      Hp        -1.201725                           Liver
+1823    Nat8        -1.185907                           Liver
+1514 Onecut2        -1.161731                           Liver
+1911   Thrsp        -1.135928                           Liver
 
 	Welch Two Sample t-test
 
@@ -32,19 +42,29 @@ sample estimates:
 [1] "Upregulated genes: 506 genes (n = 1079 superenhancers)"
 [1] "Downregulated genes: 594 genes (n = 1819 superenhancers)"
 [1] "Upregulated genes top fold changes:"
-       Gene Log2 Fold Change         Tissue
-1086  Ccnd1         2.332747     E14.5_Limb
-1168  Gins2         1.312802    pro-B_Cells
-714   Fabp4         1.228302          Heart
-955  Ablim2         1.160475         Cortex
-656   Nacc2         1.159653 Olfactory_bulb
+         Gene Log2 Fold Change         Tissue
+1086    Ccnd1         2.332747     E14.5_Limb
+1168    Gins2         1.312802    pro-B_Cells
+714     Fabp4         1.228302          Heart
+955    Ablim2         1.160475         Cortex
+656     Nacc2         1.159653 Olfactory_bulb
+1128 Serpinh1         1.137571    E14.5_Heart
+1126 Serpinh1         1.134282          Heart
+1130 Serpinh1         1.120534     E14.5_Limb
+1132 Serpinh1         1.112368    E14.5_Brain
+981     Gapdh         1.069175    E14.5_Heart
 [1] "Downregulated genes top fold changes:"
-     Gene Log2 Fold Change      Tissue
-2751  Jun        -2.144911 E14.5_Heart
-2756  Jun        -2.114315  Macrophage
-2753  Jun        -2.106171      Spleen
-2750  Jun        -2.049385       Heart
-2752  Jun        -2.044600   Intestine
+         Gene Log2 Fold Change         Tissue
+2751      Jun        -2.144911    E14.5_Heart
+2756      Jun        -2.114315     Macrophage
+2753      Jun        -2.106171         Spleen
+2750      Jun        -2.049385          Heart
+2752      Jun        -2.044600      Intestine
+2523     Gad1        -2.024787    E14.5_Brain
+2949 Arhgap25        -1.926678         Spleen
+1568     Btg1        -1.903604         Spleen
+2803     Gsap        -1.896781     Macrophage
+2522     Gad1        -1.893646 Olfactory_bulb
 
 	Welch Two Sample t-test
 
@@ -62,19 +82,29 @@ sample estimates:
 [1] "Upregulated genes: 506 genes (n = 1079 superenhancers)"
 [1] "Downregulated genes: 594 genes (n = 1819 superenhancers)"
 [1] "Upregulated genes top fold changes:"
-         Gene Log2 Fold Change      Tissue
-1128 Serpinh1         1.798879 E14.5_Heart
-1126 Serpinh1         1.797041       Heart
-1130 Serpinh1         1.780034  E14.5_Limb
-1132 Serpinh1         1.774056 E14.5_Brain
-609      Scd2         1.720352 pro-B_Cells
+          Gene Log2 Fold Change               Tissue
+1128  Serpinh1         1.798879          E14.5_Heart
+1126  Serpinh1         1.797041                Heart
+1130  Serpinh1         1.780034           E14.5_Limb
+1132  Serpinh1         1.774056          E14.5_Brain
+609       Scd2         1.720352          pro-B_Cells
+605       Scd2         1.698676               Testis
+607       Scd2         1.520642               Cortex
+14        Lad1         1.479794            Intestine
+1        Inhbb         1.464010 Embryonic_stem_cells
+300  Hist1h2af         1.291546          E14.5_Liver
 [1] "Downregulated genes top fold changes:"
-        Gene Log2 Fold Change Tissue
-3088 Fam169b       -1.1348126  Liver
-3092 Fam169b       -1.0463954 Spleen
-2050   Snx29       -1.0326621 Kidney
-1377   Ephx1       -0.9283087  Liver
-3090 Fam169b       -0.9043141 Thymus
+              Gene Log2 Fold Change     Tissue
+3088       Fam169b       -1.1348126      Liver
+3092       Fam169b       -1.0463954     Spleen
+2050         Snx29       -1.0326621     Kidney
+1377         Ephx1       -0.9283087      Liver
+3090       Fam169b       -0.9043141     Thymus
+1379         Ephx1       -0.8639183        MEF
+2089        Zbtb20       -0.8500389      Heart
+2801       Slc46a3       -0.8143922 Macrophage
+2576          Car1       -0.7746658   Myotubes
+1365 4930523C07Rik       -0.7436032     Spleen
 
 	Welch Two Sample t-test
 
@@ -92,19 +122,29 @@ mean of x mean of y
 [1] "Upregulated genes: 327 genes (n = 813 superenhancers)"
 [1] "Downregulated genes: 353 genes (n = 757 superenhancers)"
 [1] "Upregulated genes top fold changes:"
-        Gene Log2 Fold Change      Tissue
-957    Gins2         1.312802 pro-B_Cells
-143   Arid3a         1.218704    Myotubes
-929 Serpinh1         1.137571 E14.5_Heart
-927 Serpinh1         1.134282       Heart
-931 Serpinh1         1.120534  E14.5_Limb
+         Gene Log2 Fold Change      Tissue
+957     Gins2        1.3128015 pro-B_Cells
+143    Arid3a        1.2187038    Myotubes
+929  Serpinh1        1.1375710 E14.5_Heart
+927  Serpinh1        1.1342815       Heart
+931  Serpinh1        1.1205340  E14.5_Limb
+933  Serpinh1        1.1123681 E14.5_Brain
+260      Npc2        0.9366861  Macrophage
+1005   Gtf2e2        0.9247205       Liver
+186      Mpp3        0.8285628  Cerebellum
+925  Serpinh1        0.8207790         MEF
 [1] "Downregulated genes top fold changes:"
-       Gene Log2 Fold Change     Tissue
-1771   Gsap        -1.896781 Macrophage
-1916  Cyb5b        -1.599377     Thymus
-1540   Scd1        -1.377578     Spleen
-1343   A1bg        -1.322612   Th_Cells
-1800 Clec2d        -1.321174     Kidney
+       Gene Log2 Fold Change                           Tissue
+1771   Gsap        -1.896781                       Macrophage
+1916  Cyb5b        -1.599377                           Thymus
+1540   Scd1        -1.377578                           Spleen
+1343   A1bg        -1.322612                         Th_Cells
+1800 Clec2d        -1.321174                           Kidney
+1801 Clec2d        -1.300479                           Spleen
+1802 Clec2d        -1.237881                              MEF
+1804 Clec2d        -1.237427 Hair_follicle_stem_cells_(HFSCs)
+1803 Clec2d        -1.237332                             Lung
+1805 Clec2d        -1.226586                            Heart
 
 	Welch Two Sample t-test
 
