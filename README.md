@@ -204,7 +204,7 @@ Figures in paper were generated as follows:
       <li>A/B:
         <ul>
           <li>PDF files: chipseq/output/figures</li>
-          <li>Raw output: chipseq/output/mat</li>
+          <li>Raw output: chipseq/output/mat, chipseq/output/se_h3k27ac_data.xlsx</li>
           <li><a href="#chipseq">Link to method</a></li>
         </ul>
       </li>
@@ -326,6 +326,15 @@ Supplementary tables in paper were generated as follows:
       <li>output/enrichr_mouse_tissue/tissue_enrichment_table.xlsx
         <ul>
           <li><a href="#mouse_tissue_enrichment">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>chipseq/output/se_h3k27ac_data.xlsx
+        <ul>
+          <li><a href="#chipseq">Link to method</a></li>
         </ul>
       </li>
     </ul>
