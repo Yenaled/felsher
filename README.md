@@ -420,6 +420,24 @@ Supplementary tables in paper were generated as follows:
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>additional_tables/mouse_strains.docx
+        <ul>
+          <li>Self-created table</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>additional_tables/qpcr_primers.docx
+        <ul>
+          <li>Self-created table</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 # Appendix<a name="appendix"></a>
