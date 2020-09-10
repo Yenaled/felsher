@@ -192,7 +192,9 @@ We obtain log2(x+1)-transformed DESeq-normalized TPM values as follows:
 
 <pre>Rscript ccle/ccle_normalize.r ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv
 gzip ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv</pre>
-     
+
+The normalized TPM file should be OK for either within-sample (length-normalized) or between-sample (size factor normalized) analyses.
+
 Alternately, the TPM and normalized TPM files are posted here (which you can download and put into the ccle/ directory):
 <ul>
   <li>https://github.com/Yenaled/felsher/releases/download/felsher/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz</li>
