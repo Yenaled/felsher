@@ -126,6 +126,14 @@ Note: The smaller files are in the tcga/ directory of this Github repository. Ho
 
 For clinical data (for survival analysis), use the TCGA-CDR data file TCGA-CDR-SupplementalTableS1.xlsx which can be downloaded from the PanCanAtlas at https://api.gdc.cancer.gov/data/1b5f413e-a8d1-4d10-92eb-7c4ae739ed81 -- this file can also be found in the tcga/ directory of this GitHub repository.
 
+## TCGA survival analysis (Cox regression meta-analysis)
+
+To obtain Cox regression z-scores and meta-z scores for TCGA data, run the following:
+
+<pre>Rscript tcga/tcga_survival.r tcga/TCGA-CDR-SupplementalTableS1.xlsx tcga/TCGA.processed.tumors_corrected.tsv.gz tcga/TCGA.processed.info_corrected.csv 4 tcga/tcga_zscores.csv</pre>
+
+The file tcga/tcga_zscores.csv will contain the pan-cancer survival z-scores (a gzip-compressed version of the file, tcga/tcga_zscores.csv.gz, is available in the tcga/ directory of this GitHub repository).
+
 # Integrating Differential Gene Expression Analyses<a name="mouse_integration"></a>
 
 The following command will integrate information from multiple differential gene expression analyses: microarrays of liver, kidney, and lung cancers as well as RNA-seq of lymphomas. We control FDR at 0.05 and set the fold change threshold to 2 (i.e. a log2 Fold Change of 1). The output will be placed in output/mouse_de/.
