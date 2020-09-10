@@ -190,7 +190,8 @@ mv CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/</pre>
 
 We obtain log2(x+1)-transformed DESeq-normalized TPM values as follows:
 
-<pre>Rscript ccle/ccle_normalize.r ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz</pre>
+<pre>Rscript ccle/ccle_normalize.r ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv
+gzip ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv</pre>
      
 Alternately, the TPM and normalized TPM files are posted here (which you can download and put into the ccle/ directory):
 <ul>
