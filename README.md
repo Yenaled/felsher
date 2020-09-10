@@ -44,7 +44,7 @@ Pipeline readme here: https://github.com/Yenaled/felsher/blob/master/rnaseq/rna-
 
 ## Obtaining TCGA data from UCSC Xena Toil
 
-Let's download TCGA data from UCSC Xena Toil and put them into the tcga/ directory.
+Let's download STAR-aligned RSEM-quantified TCGA data from UCSC Xena Toil and put them into the tcga/ directory.
 
 We obtain log2(x+1)-transformed DESeq2-normalized RSEM values (for between-samples comparisons) as follows:
 
@@ -178,6 +178,26 @@ To combine the human and mouse signatures to generate a signature containing gen
 The output files will be found in output/integrative_signature/
 
 # CCLE<a name="ccle"></a>
+
+## Obtaining CCLE data from Broad Institute
+
+Let's download STAR-aligned RSEM-quantified CCLE data from The Broad Institute and put them into the ccle/ directory.
+
+We obtain TPM values from RSEM quantification as follows:
+
+<pre>wget --continue https://data.broadinstitute.org/ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz
+mv CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/</pre>
+
+We obtain log2(x+1)-transformed DESeq-normalized TPM values as follows:
+
+<pre>Rscript ccle/ccle_normalize.r ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz</pre>
+     
+Alternately, the TPM and normalized TPM files are posted here (which you can download and put into the ccle/ directory):
+<ul>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz</li>
+  <li>https://github.com/Yenaled/felsher/releases/download/felsher/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz</li>
+</ul>
+
 
 # ChIP-Seq<a name="chipseq"></a>
 
