@@ -53,7 +53,7 @@ zcat < TCGA-GTEx-TARGET-gene-exp-counts.deseq2-normalized.log2.gz|awk -v OFS='\t
      else printf "%s%s", $i, OFS; print ""; next}
      {for (i=1; i<=NF; i++) if (!(i in a)) printf "%s%s", $i, OFS; print "" }' | gzip > tcga/TCGA.rsem.deseq2.log2.tsv.gz</pre>
 
-We obtain gene-level log2(x+0.001)-trransformed TPM values (for within-samples comparisons) as follows:
+We obtain gene-level log2(x+0.001)-transformed TPM values (for within-samples comparisons) as follows:
 
 <pre>wget --continue https://toil.xenahubs.net/download/TcgaTargetGtex_rsem_gene_tpm.gz
 zcat < TcgaTargetGtex_rsem_gene_tpm.gz|awk -v OFS='\t' 'NR==1{for (i=1; i<=NF; i++) if (!($i ~ /TCGA/)) a[i]; 
