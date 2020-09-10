@@ -281,6 +281,17 @@ Figures in paper were generated as follows:
           <li><a href="#combinedsig">Link to method</a></li>
         </ul>
       </li>
+      <li>E:
+        <ul>
+          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
+          <li>Raw output:
+            <ul>
+              <li>qpcr/summary_p493.xlsx</li>
+              <li>qpcr/summary_ec4.xlsx</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ol>
@@ -311,6 +322,16 @@ Supplementary figures in paper were generated as follows:
         <ul>
           <li>Raw output: chipseq/output/mat/eumyc_h3k27ac_dbsuper_log2FC.mat.gz, chipseq/output/mat/hcc_h3k27ac_dbsuper_log2FC.mat.gz</li>
           <li><a href="#chipseq">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>qpcr/myc.pdf
+        <ul>
+          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
+          <li>Raw output: qpcr/summary_p493.xlsx, qpcr/summary_ec4.xlsx</li>
         </ul>
       </li>
     </ul>
