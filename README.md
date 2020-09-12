@@ -544,6 +544,8 @@ Here are some files of note:
     <li>https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Mus_musculus.gene_info.gz - Mapping between mouse gene symbols and NCBI IDs, among other things</li>
 </ul>
 
+If the links above are broken, the NCBI annotation files (accessed in the year 2020) can be found here: https://github.com/Yenaled/felsher/releases/download/felsher/ncbi_annotations.zip
+
 ## Loading files in Excel
 
 When loading .csv files or files containing tab-separated values in Excel, use File -> Import to import the files into Excel and set "Column data format" for all columns containing gene names/symbols to "Text" rather than "General". This will allow you to avoid issues with gene names being reformatted (e.g. March7 becoming 7-Mar).
