@@ -201,6 +201,13 @@ Alternately, the TPM and normalized TPM files are posted here (which you can dow
   <li>https://github.com/Yenaled/felsher/releases/download/felsher/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz</li>
 </ul>
 
+## Pair-wise correlations
+
+To generate pair-wise Pearson correlations with MYC, run the following:
+
+<pre>Rscript ccle/ccle_pairwise_correlation.r ENSG00000136997 ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz ccle/CCLE_myc_cor.csv</pre>
+
+The output file is ccle/CCLE_myc_cor.csv
 
 # ChIP-Seq<a name="chipseq"></a>
 
