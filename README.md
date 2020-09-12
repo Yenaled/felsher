@@ -527,6 +527,7 @@ Supplementary tables in paper were generated as follows:
   <li>ggbeeswarm 0.6.0</li>
   <li>survival 3.1-12</li>
   <li>RobustRankAggreg 1.1</li>
+  <li>Rtsne 0.15</li>
 </ul>
 
 ## Gene identifiers ortholog mapping
