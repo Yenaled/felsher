@@ -68,7 +68,7 @@ Alternately, the TCGA normalized RSEM and TPM files are posted here (which you c
 
 ## Obtaining TCGA batch identifier data (Tissue Source Site and Batch ID)
 
-The final results of these steps are already in this github repository, but here is how those final results wereobtained:
+The final results of these steps are already in this github repository, but here is how those final results were obtained:
 
 1. Go to the GDC portal, navigate to the repository, add all the biospecimen files (bcr xml format) to your cart, then download the manifest file (save the manifest file as gdc_biospecimen.txt).
 2. Using NCI's gdc-client software, run the following command to download the file into the path: tcga/biospecimen:
