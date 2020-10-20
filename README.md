@@ -291,6 +291,19 @@ Figures in paper were generated as follows:
       </li>
       <li>C:
         <ul>
+          <li>PDF file: output/integrative_signature/barcode_top_5_pathways.pdf</li>
+          <li>Raw output:
+            <ul>
+              <li>output/integrative_signature/correlation_data.csv</li>
+              <li>output/integrative_signature/signature_go_bp.xlsx</li>
+              <li>output/integrative_signature/signature_tumorigenesis_go_bp.xlsx</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+      <li>D:
+        <ul>
           <li>STRING: functional protein association networks - string-db.org</li>
           <li>Procedure:
             <ul>
@@ -299,7 +312,7 @@ Figures in paper were generated as follows:
           </li>
         </ul>
       </li>
-      <li>D:
+      <li>E:
         <ul>
           <li>Self-created figure</li>
           <li>Raw output:
@@ -311,7 +324,7 @@ Figures in paper were generated as follows:
           <li><a href="#combinedsig">Link to method</a></li>
         </ul>
       </li>
-      <li>E:
+      <li>F:
         <ul>
           <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
           <li>Raw output:
