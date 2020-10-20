@@ -481,6 +481,15 @@ Supplementary tables in paper were generated as follows:
   </li>
   <li>
     <ul>
+      <li>output/integrative_signature/signature_tumorigenesis_go_bp.xlsx
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
       <li>additional_tables/mouse_strains.docx
         <ul>
           <li>Self-created table</li>
