@@ -131,3 +131,52 @@ sink()
 # EnrichR (GO Biological Process + Mouse Gene Atlas) for final signature
 signature_go_bp <- do_enrichment("GO_Biological_Process_2018", NULL, list(Signature=final_signature$Symbol), output_file=paste(output_dir, "signature_go_bp.xlsx", sep=""))
 signature_go_mouse_cells <- do_enrichment("Mouse_Gene_Atlas", NULL, list(Signature=final_signature$Symbol), output_file=paste(output_dir, "signature_go_mouse_cells.xlsx", sep=""))
+
+# EnrichR (GO Biological Process) for "tumorigenesis" signature (i.e. upregulated in mouse models but doesn't meet correlation threshold in TCGA)
+signature_tumorigenesis_go_bp <- do_enrichment("GO_Biological_Process_2018", NULL, list(Signature=tcga_rra_data[!(rownames(tcga_rra_data) %in% rownames(final_signature)) & tcga_rra_data$up,"Symbol"]), output_file=paste(output_dir, "signature_tumorigenesis_go_bp.xlsx", sep=""))
+
+# GO Biological Process pathway analysis for the top 5 pathways in the final signature and the tumorigenesis signature
+
+num_pathways <- 5
+mouse_genes_up <- tcga_rra_data[tcga_rra_data$up,c("Symbol","median_pearson")]
+mouse_genes_up <- mouse_genes_up[order(mouse_genes_up$median_pearson),]
+top_pathways_signature <- rownames(signature_go_bp[1:num_pathways,])
+top_pathways_signature_tumorigenesis <- rownames(signature_tumorigenesis_go_bp[1:num_pathways,])
+
+# Load Gene Ontology genesets
+raw_genesets_go <- readLines("data/GO_Biological_Process_2018.txt")
+genesets_go <- list()
+for (line in raw_genesets_go) {
+    for (geneset_name in c(top_pathways_signature, top_pathways_signature_tumorigenesis)) {
+        if (startsWith(line, paste(geneset_name, "\t", sep=""))) {
+            geneset_data <- unlist(strsplit(line, "\t"))
+            geneset_data <- c(geneset_name, gsub("(.*),.*", "\\1", geneset_data[2:length(geneset_data)]))
+            genesets_go[[geneset_name]] <- geneset_data
+        }
+    }
+}
+genelist_top_pathways_signature <- c()
+for (pathway in top_pathways_signature) {
+    genelist_top_pathways_signature <- c(genelist_top_pathways_signature, genesets_go[[pathway]])
+}
+genelist_top_pathways_signature <- unique(genelist_top_pathways_signature)
+genelist_top_pathways_signature_tumorigenesis <- c()
+for (pathway in top_pathways_signature_tumorigenesis) {
+    genelist_top_pathways_signature_tumorigenesis <- c(genelist_top_pathways_signature_tumorigenesis, genesets_go[[pathway]])
+}
+genelist_top_pathways_signature_tumorigenesis <- unique(genelist_top_pathways_signature_tumorigenesis)
+
+# Output barcode plots of to pathways
+pdf(paste(output_dir, "barcode_top_", num_pathways, "_pathways.pdf", sep=""), width=4.5, height=2)
+pathways <- list(genelist_top_pathways_signature, genelist_top_pathways_signature_tumorigenesis)
+par(mfrow=c(length(pathways),1), mar=c(0.5,0.5,0.5,0.5))
+for (pathway in pathways) {
+    inPathway <- toupper(mouse_genes_up$Symbol) %in% toupper(pathway)
+    barplot(height=inPathway, col="black", border=NA, space=0, axes=FALSE)
+    segments(0,0, 0,1)
+    segments(0,1, length(inPathway),1)
+    segments(length(inPathway),1, length(inPathway),0)
+    segments(0,0, length(inPathway),0)
+    abline(v = num_below_cor, col="red")
+}
+device <- dev.off()
