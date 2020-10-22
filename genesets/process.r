@@ -1,5 +1,5 @@
 load("aggregated_genesets_myc_up.RData")
-ensembl_mapping <- read.csv("../../data/rnaseq/annotation/hg19_ensembl.csv", header=TRUE, stringsAsFactors=FALSE)
+ensembl_mapping <- read.csv("../rnaseq/annotation/hg19_ensembl.csv", header=TRUE, stringsAsFactors=FALSE)
 updated_ensembl <- list(ENSG00000265479="DTX2P1-UPK3BP1-PMS2P11",
                         ENSG00000196668="LINC00173",
                         ENSG00000199004="MIR21",
