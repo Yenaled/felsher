@@ -4,8 +4,8 @@
 3. [TCGA](#tcga)
 4. [Integrating Differential Gene Expression Analyses](#mouse_integration)
 5. [Downstream Analyses of Mouse Differential Gene Expression](#mouse_downstream_analyses)
-6. [Pan-Cancer Rank Aggregation](#rank)
-7. [CCLE](#ccle)
+6. [CCLE](#ccle)
+7. [Pan-Cancer Rank Aggregation](#rank)
 8. [ChIP-Seq](#chipseq)
 9. [Figures](#figures)
 10. [Appendix](#appendix)
@@ -159,24 +159,6 @@ The GSEA results will be outputted in go_gsea.xlsx and the top GO terms will be 
 
 <pre>Rscript analyze_mouse_go_enrichment.r output/enrichr_mouse_go/go_gsea.xlsx data/go_term_collapse.csv</pre>
 
-# Pan-Cancer Rank Aggregation<a name="rank"></a>
-
-## Rank Aggregation
-
-To generate pair-wise correlations with MYC and to perform rank aggregation with Robust Rank Aggregation (RRA) of the pair-wise Pearson correlation coefficients across all TCGA cancer types, run the following:
-
-<pre>Rscript rankaggregation.r tcga/TCGA.processed.tumors_corrected.tsv.gz tcga/TCGA.processed.info_corrected.csv output/tcga_correlation/</pre>
-
-The output files will be located in output/tcga_correlation/ -- the file myc_rra.csv contains the RRA p-values and the file myc_correlations.csv (which you can compress to make myc_correlations.csv.gz since the file is rather large) contains the pair-wise Pearson correlation coefficients.
-
-## Combined Human + Mouse Signature<a name="combinedsig"></a>
-
-To combine the human and mouse signatures to generate a signature containing genes differentially expressed (in the same direction) in at least 4 out of 5 MYC mouse tumor models and with median Pearson's r > 0.30 (and RRA adjusted p-value < 0.05) across the TCGA cancer types, run the following:
-
-<pre>Rscript integrative_signature.r</pre>
-
-The output files will be found in output/integrative_signature/
-
 # CCLE<a name="ccle"></a>
 
 ## Obtaining CCLE data from Broad Institute
@@ -208,6 +190,32 @@ To generate pair-wise Pearson correlations with MYC, run the following:
 <pre>Rscript ccle/ccle_pairwise_correlation.r ENSG00000136997 ccle/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz ccle/CCLE_myc_cor.csv</pre>
 
 The output file is ccle/CCLE_myc_cor.csv
+
+# Pan-Cancer Rank Aggregation<a name="rank"></a>
+
+## Rank Aggregation
+
+To generate pair-wise correlations with MYC and to perform rank aggregation with Robust Rank Aggregation (RRA) of the pair-wise Pearson correlation coefficients across all TCGA cancer types, run the following:
+
+<pre>Rscript rankaggregation.r tcga/TCGA.processed.tumors_corrected.tsv.gz tcga/TCGA.processed.info_corrected.csv output/tcga_correlation/</pre>
+
+The output files will be located in output/tcga_correlation/ -- the file myc_rra.csv contains the RRA p-values and the file myc_correlations.csv (which you can compress to make myc_correlations.csv.gz since the file is rather large) contains the pair-wise Pearson correlation coefficients.
+
+## Combined Human + Mouse Signature<a name="combinedsig"></a>
+
+To combine the human and mouse signatures to generate a signature containing genes differentially expressed (in the same direction) in at least 4 out of 5 MYC mouse tumor models and with median Pearson's r > 0.30 (and RRA adjusted p-value < 0.05) across the TCGA cancer types, run the following:
+
+<pre>Rscript integrative_signature.r</pre>
+
+The output files will be found in output/integrative_signature/
+
+## Downstream Analysis of Combined Signature<a name="combinedsigdownstream"></a>
+
+To perform downstream analysis of the combined signature generated above (e.g. survival analysis, CCLE correlation, how it compares to the MYC gene sets which were processed in the genesets/ folder, etc.), run the following:
+
+<pre>Rscript analyze_signatures.r</pre>
+
+The output files will be found in output/signature_analysis/
 
 # ChIP-Seq<a name="chipseq"></a>
 
