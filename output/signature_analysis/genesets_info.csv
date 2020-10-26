@@ -1,0 +1,17 @@
+"Gene Set","MSigDB Name","MSigDB ID","Set Size","Size of Intersection with This Study's Signature"
+"Muhar et al., 2018","","",100,17
+"Bild et al., 2006","BILD_MYC_ONCOGENIC_SIGNATURE","M2069",203,14
+"Hallmark MYC Targets V2","HALLMARK_MYC_TARGETS_V2","M5928",57,12
+"Ji et al., 2011","","",51,12
+"Zeller et al., 2003 (up) #1","DANG_MYC_TARGETS_UP","M6506",143,11
+"Schuhmacher et al., 2001 (up)","SCHUHMACHER_MYC_TARGETS_UP","M12243",79,9
+"Bild et al., 2006 (up)","MYC_UP.V1_UP","M2711",194,8
+"Menssen et al., 2002","MENSSEN_MYC_TARGETS","M11829",53,8
+"PID MYC Activation Pathway","PID_MYC_ACTIV_PATHWAY","M66",78,7
+"Alfano et al., 2010","ALFANO_MYC_TARGETS","M2477",238,6
+"Zeller et al., 2003 (up) #2","DANG_REGULATED_BY_MYC_UP","M18501",71,6
+"Jung et al., 2017","","",18,4
+"Coller et al., 2000 (up)","COLLER_MYC_TARGETS_UP","M5955",25,2
+"Yu et al., 2005 (up)","YU_MYC_TARGETS_UP","M1249",42,2
+"Ellwood et al., 2003 (up)","ELLWOOD_MYC_TARGETS_UP","M2607",13,1
+"PID MYC Pathway","PID_MYC_PATHWAY","M139",24,1
