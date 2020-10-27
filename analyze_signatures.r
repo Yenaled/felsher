@@ -104,6 +104,7 @@ device <- dev.off()
 print("Meta-z score analysis")
 print(signature.metaz[1:5,,drop=FALSE])
 print(wilcox.test(as.numeric(signature.metaz[,"MetaZ"]), as.numeric(tcga_z_scores[,"MetaZ"])))
+write.csv(signature.metaz, file=paste(output_dir, "tcga_metaz.csv", sep=""))
 
 # CCLE MYC clustering: plot PCA/t-SNE
 data_signature <- t(ccle_data[rownames(ccle_data) %in% c("ENSG00000136997",rownames(signature)),])
