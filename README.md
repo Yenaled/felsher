@@ -345,6 +345,27 @@ Figures in paper were generated as follows:
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>A:
+        <ul>
+          <li>PDF file: output/signature_analysis/upset_genesets_top_5.pdf</li>
+          <li>Raw gene sets / signatures:
+            <ul>
+              <li>genesets/myc_signature_genesets_ensembl.gmx</li>
+              <li>output/integrative_signature/signature.csv</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsig_downstream">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>Self-created figure</li>
+    </ul>
+  </li>
 </ol>
 
 Supplementary figures in paper were generated as follows:
