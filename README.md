@@ -359,6 +359,17 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
           <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
+      <li>B:
+        <ul>
+          <li>PDF file: output/signature_analysis/ccle_clustering.pdf</li>
+          <li>Raw output:
+            <ul>
+              <li>output/signature_analysis/ccle_clustering.csv</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>
