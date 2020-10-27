@@ -356,7 +356,7 @@ Figures in paper were generated as follows:
               <li>output/integrative_signature/signature.csv</li>
             </ul>
           </li>
-          <li><a href="#combinedsig_downstream">Link to method</a></li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
     </ul>
