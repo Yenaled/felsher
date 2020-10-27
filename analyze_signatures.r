@@ -126,6 +126,7 @@ axis(side = 1, lwd.ticks=2.25)
 axis(side = 2, lwd.ticks=2.25)
 box(lwd=2.25)
 device <- dev.off()
+write.csv(t(data_signature), file=paste(output_dir, "ccle_clustering.csv", sep=""))
 
 # TCGA LFC analysis
 rowMedians <- function(df) {
