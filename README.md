@@ -103,7 +103,7 @@ The output files from the preceding command (i.e. the processed files associated
     <ul>
       <li>TCGA.processed.info_corrected.csv - Information about cancer types, tumor/normal, batches, etc. for each sample</li>
       <li>TCGA.processed.batch_effects_view.pdf - PCA plots of the result of batch correction</li>
-      <li>TCGA.processed.tumors_corrected.tsv.gz - Tumor sample expression data</li>
+      <li>TCGA.processed.tumors_corrected.tsv.gz - Tumor sample expression data (n = 9354 tumors)</li>
     </ul>
   </li>
   <li>Non-batch corrected:
