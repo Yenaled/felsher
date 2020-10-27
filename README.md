@@ -467,6 +467,16 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>output/signature_analysis/tcga_lfc.pdf
+        <ul>
+          <li>Raw output: output/signature_analysis/tcga_lfc.csv</li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 **Supplementary tables** in paper were generated as follows:
