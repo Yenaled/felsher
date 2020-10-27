@@ -223,7 +223,7 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
 
 # Figures<a name="figures"></a>
 
-Figures in paper were generated as follows:
+**Figures** in paper were generated as follows:
 
 <ol>
   <li>
@@ -368,7 +368,7 @@ Figures in paper were generated as follows:
   </li>
 </ol>
 
-Tables in paper were generated as follows:
+**Tables** in paper were generated as follows:
 
 <ol>
   <li>
@@ -382,7 +382,7 @@ Tables in paper were generated as follows:
   </li>
 </ol>
 
-Supplementary figures in paper were generated as follows:
+**Supplementary figures** in paper were generated as follows:
 
 <ol>
   <li>
@@ -424,7 +424,7 @@ Supplementary figures in paper were generated as follows:
   </li>
 </ol>
 
-Supplementary tables in paper were generated as follows:
+**Supplementary tables** in paper were generated as follows:
 
 <ol>
   <li>
