@@ -368,6 +368,20 @@ Figures in paper were generated as follows:
   </li>
 </ol>
 
+Tables in paper were generated as follows:
+
+<ol>
+  <li>
+    <ul>
+      <li>output/signature_analysis/genesets_info.csv
+        <ul>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
 Supplementary figures in paper were generated as follows:
 
 <ol>
