@@ -126,7 +126,7 @@ Note: The smaller files are in the tcga/ directory of this Github repository. Ho
 
 For clinical data (for survival analysis), use the TCGA-CDR data file TCGA-CDR-SupplementalTableS1.xlsx which can be downloaded from the PanCanAtlas at https://api.gdc.cancer.gov/data/1b5f413e-a8d1-4d10-92eb-7c4ae739ed81 -- this file can also be found in the tcga/ directory of this GitHub repository.
 
-## TCGA survival analysis (Cox regression meta-analysis)
+## TCGA survival analysis (Cox regression meta-analysis)<a name="tcgacox"></a>
 
 To obtain Cox regression z-scores and meta-z scores for TCGA data, run the following:
 
@@ -183,7 +183,7 @@ Alternately, the TPM and normalized TPM files are posted here (which you can dow
   <li>https://github.com/Yenaled/felsher/releases/download/felsher/CCLE_RNAseq_rsem_genes_tpm.deseq.log2.tsv.gz</li>
 </ul>
 
-## Pair-wise correlations
+## Pair-wise correlations<a name="cclepairwise"></a>
 
 To generate pair-wise Pearson correlations with MYC, run the following:
 
@@ -585,6 +585,24 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       <li>output/integrative_signature/signature_tumorigenesis_go_bp.xlsx
         <ul>
           <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>tcga/tcga_zscores.csv.gz
+        <ul>
+          <li><a href="#tcgacox">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>ccle/CCLE_myc_cor.csv
+        <ul>
+          <li><a href="#cclepairwise">Link to method</a></li>
         </ul>
       </li>
     </ul>
