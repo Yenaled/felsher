@@ -370,6 +370,40 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
           <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
+      <li>C:
+        <ul>
+          <li>PDF file: output/signature_analysis/tcga_metaz.pdf</li>
+          <li>Raw output:
+            <ul>
+              <li>output/signature_analysis/tcga_metaz.csv</li>
+              <li>output/signature_analysis/log.txt</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
+      <li>D:
+        <ul>
+          <li>PDF file: output/signature_analysis/ccle_genesets_cor.pdf</li>
+          <li>Raw dataset:
+            <ul>
+              <li>ccle/CCLE_myc_cor.csv</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
+      <li>E:
+        <ul>
+          <li>PDF file: output/signature_analysis/tcga_genesets_metaz.pdf</li>
+          <li>Raw dataset:
+            <ul>
+              <li>tcga/tcga_zscores.csv.gz</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>
