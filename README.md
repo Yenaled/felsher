@@ -163,7 +163,7 @@ The GSEA results will be outputted in go_gsea.xlsx and the top GO terms will be 
 
 ## Obtaining CCLE data from Broad Institute
 
-Let's download STAR-aligned RSEM-quantified CCLE data from The Broad Institute and put them into the ccle/ directory.
+Let's download STAR-aligned RSEM-quantified CCLE data (n = 1019 cells) from The Broad Institute and put them into the ccle/ directory.
 
 We obtain TPM values from RSEM quantification as follows:
 
