@@ -10,7 +10,7 @@ data <- read.table(input_file, sep="\t", header=TRUE, stringsAsFactors=FALSE, ch
 rownames(data) <- data$gene_id
 data$gene_id <- NULL
 data$transcript_ids <- NULL
-data.myc <- unlist(data["ENSG00000136997",]) # The MYC row
+data.myc <- unlist(data[gene,]) # The gene_to_correlate row
 cors <- apply(data, 1, y=data.myc, function(x, y) cor.test(y,x)$estimate ) # This might spit out a bunch of warnings for cases where std dev of x is zero
 cors <- data.frame(cors)
 colnames(cors) <- "r"
