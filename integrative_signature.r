@@ -166,7 +166,7 @@ for (pathway in top_pathways_signature_tumorigenesis) {
 }
 genelist_top_pathways_signature_tumorigenesis <- unique(genelist_top_pathways_signature_tumorigenesis)
 
-# Output barcode plots of to pathways
+# Output barcode plots of top pathways
 pdf(paste(output_dir, "barcode_top_", num_pathways, "_pathways.pdf", sep=""), width=4.5, height=2)
 pathways <- list(genelist_top_pathways_signature, genelist_top_pathways_signature_tumorigenesis)
 par(mfrow=c(length(pathways),1), mar=c(0.5,0.5,0.5,0.5))
