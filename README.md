@@ -418,9 +418,9 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
 <ol>
   <li>
     <ul>
-      <li>output/signature_analysis/genesets_info.csv
+      <li>additional_tables/mouse_strains.docx
         <ul>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
+          <li>Self-created table</li>
         </ul>
       </li>
     </ul>
@@ -619,9 +619,9 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>additional_tables/mouse_strains.docx
+      <li>output/signature_analysis/genesets_info.csv
         <ul>
-          <li>Self-created table</li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
     </ul>
