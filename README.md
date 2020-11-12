@@ -349,18 +349,6 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
     <ul>
       <li>A:
         <ul>
-          <li>PDF file: output/signature_analysis/upset_genesets_top_5.pdf</li>
-          <li>Raw gene sets / signatures:
-            <ul>
-              <li>genesets/myc_signature_genesets_ensembl.gmx</li>
-              <li>output/integrative_signature/signature.csv</li>
-            </ul>
-          </li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
-        </ul>
-      </li>
-      <li>B:
-        <ul>
           <li>PDF file: output/signature_analysis/ccle_clustering.pdf</li>
           <li>Raw output:
             <ul>
@@ -370,13 +358,25 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
           <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
-      <li>C:
+      <li>B:
         <ul>
           <li>PDF file: output/signature_analysis/tcga_metaz.pdf</li>
           <li>Raw output:
             <ul>
               <li>output/signature_analysis/tcga_metaz.csv</li>
               <li>output/signature_analysis/log.txt</li>
+            </ul>
+          </li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
+        </ul>
+      </li>
+      <li>C:
+        <ul>
+          <li>PDF file: output/signature_analysis/upset_genesets_top_5.pdf</li>
+          <li>Raw gene sets / signatures:
+            <ul>
+              <li>genesets/myc_signature_genesets_ensembl.gmx</li>
+              <li>output/integrative_signature/signature.csv</li>
             </ul>
           </li>
           <li><a href="#combinedsigdownstream">Link to method</a></li>
