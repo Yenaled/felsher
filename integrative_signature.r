@@ -166,17 +166,20 @@ for (pathway in top_pathways_signature_tumorigenesis) {
 }
 genelist_top_pathways_signature_tumorigenesis <- unique(genelist_top_pathways_signature_tumorigenesis)
 
+genelist_pathways_tissue <- unique(c(genesets_mouse_tissue[["embryonic stem line Bruce4 p13"]], genesets_mouse_tissue[["embryonic stem line V26 2 p16"]]))
+
 # Output barcode plots of top pathways
-pdf(paste(output_dir, "barcode_top_", num_pathways, "_pathways.pdf", sep=""), width=4.5, height=2)
-pathways <- list(genelist_top_pathways_signature, genelist_top_pathways_signature_tumorigenesis)
-par(mfrow=c(length(pathways),1), mar=c(0.5,0.5,0.5,0.5))
+pdf(paste(output_dir, "barcode_top_", num_pathways, "_pathways_and_embryonic.pdf", sep=""), width=4.5, height=2)
+pathways <- list(genelist_top_pathways_signature, genelist_top_pathways_signature_tumorigenesis, genelist_pathways_tissue)
+par(mfrow=c(length(pathways),1), mar=c(0.3,0.5,0.3,0.5))
 for (pathway in pathways) {
-    inPathway <- toupper(mouse_genes_up$Symbol) %in% toupper(pathway)
-    barplot(height=inPathway, col="black", border=NA, space=0, axes=FALSE)
-    segments(0,0, 0,1)
-    segments(0,1, length(inPathway),1)
-    segments(length(inPathway),1, length(inPathway),0)
-    segments(0,0, length(inPathway),0)
-    abline(v = num_below_cor, col="red")
+  inPathway <- toupper(mouse_genes_up$Symbol) %in% toupper(pathway)
+  barplot(height=inPathway, col="black", border=NA, space=0, axes=FALSE)
+  segments(0,0, 0,1)
+  segments(0,1, length(inPathway),1)
+  segments(length(inPathway),1, length(inPathway),0)
+  segments(0,0, length(inPathway),0)
+  num_below_cor <- nrow(mouse_genes_up[mouse_genes_up$median_pearson < 0.3,])
+  abline(v = num_below_cor, col="red")
 }
 device <- dev.off()
