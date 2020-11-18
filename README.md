@@ -299,7 +299,7 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       </li>
       <li>C:
         <ul>
-          <li>PDF file: output/integrative_signature/barcode_top_5_pathways.pdf</li>
+          <li>PDF file: output/integrative_signature/barcode_top_5_pathways_and_embryonic.pdf</li>
           <li>Raw output:
             <ul>
               <li>output/integrative_signature/correlation_data.csv</li>
@@ -321,18 +321,6 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
         </ul>
       </li>
       <li>E:
-        <ul>
-          <li>Self-created figure</li>
-          <li>Raw output:
-            <ul>
-              <li>output/integrative_signature/signature_go_bp.xlsx</li>
-              <li>output/integrative_signature/signature_go_mouse_cells.xlsx</li>
-            </ul>
-          </li>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-      <li>F:
         <ul>
           <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
           <li>Raw output:
