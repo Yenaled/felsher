@@ -499,7 +499,7 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>output/enrichr_mouse_go/heatmap_go_terms.csv
+      <li>output/enrichr_mouse_go/go_gsea.xlsx
         <ul>
           <li><a href="#mouse_de_go">Link to method</a></li>
         </ul>
@@ -508,7 +508,7 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>output/enrichr_mouse_go/go_gsea.xlsx
+      <li>output/enrichr_mouse_go/heatmap_go_terms.csv
         <ul>
           <li><a href="#mouse_de_go">Link to method</a></li>
         </ul>
