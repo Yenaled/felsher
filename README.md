@@ -447,20 +447,20 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>qpcr/myc.pdf
+      <li>output/signature_analysis/tcga_lfc.pdf
         <ul>
-          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
-          <li>Raw output: qpcr/summary_p493.xlsx, qpcr/summary_ec4.xlsx</li>
+          <li>Raw output: output/signature_analysis/tcga_lfc.csv</li>
+          <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
     </ul>
   </li>
   <li>
     <ul>
-      <li>output/signature_analysis/tcga_lfc.pdf
+      <li>qpcr/myc.pdf
         <ul>
-          <li>Raw output: output/signature_analysis/tcga_lfc.csv</li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
+          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
+          <li>Raw output: qpcr/summary_p493.xlsx, qpcr/summary_ec4.xlsx</li>
         </ul>
       </li>
     </ul>
