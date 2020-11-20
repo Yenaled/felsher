@@ -589,6 +589,15 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
+      <li>output/integrative_signature/signature_tumorigenesis_mouse_cells.xlsx
+        <ul>
+          <li><a href="#combinedsig">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
       <li>tcga/tcga_zscores.csv.gz
         <ul>
           <li><a href="#tcgacox">Link to method</a></li>
