@@ -547,33 +547,9 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   <li>
     <ul>
       <li>output/integrative_signature/signature_go_bp.xlsx
-        <ul>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/integrative_signature/signature_go_mouse_cells.xlsx
-        <ul>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/integrative_signature/signature_tumorigenesis_go_bp.xlsx
-        <ul>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/integrative_signature/signature_tumorigenesis_mouse_cells.xlsx
+        output/integrative_signature/signature_go_mouse_cells.xlsx
+        output/integrative_signature/signature_tumorigenesis_go_bp.xlsx
+        output/integrative_signature/signature_tumorigenesis_mouse_cells.xlsx
         <ul>
           <li><a href="#combinedsig">Link to method</a></li>
         </ul>
