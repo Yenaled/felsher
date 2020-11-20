@@ -132,8 +132,9 @@ sink()
 signature_go_bp <- do_enrichment("GO_Biological_Process_2018", NULL, list(Signature=final_signature$Symbol), output_file=paste(output_dir, "signature_go_bp.xlsx", sep=""))
 signature_go_mouse_cells <- do_enrichment("Mouse_Gene_Atlas", NULL, list(Signature=final_signature$Symbol), output_file=paste(output_dir, "signature_go_mouse_cells.xlsx", sep=""))
 
-# EnrichR (GO Biological Process) for "tumorigenesis" signature (i.e. upregulated in mouse models but doesn't meet correlation threshold in TCGA)
+# EnrichR (GO Biological Process + Mouse Gene Atlas) for "tumorigenesis" signature (i.e. upregulated in mouse models but doesn't meet correlation threshold in TCGA)
 signature_tumorigenesis_go_bp <- do_enrichment("GO_Biological_Process_2018", NULL, list(Signature=tcga_rra_data[!(rownames(tcga_rra_data) %in% rownames(final_signature)) & tcga_rra_data$up,"Symbol"]), output_file=paste(output_dir, "signature_tumorigenesis_go_bp.xlsx", sep=""))
+signature_tumorigenesis_mouse_cells <- do_enrichment("Mouse_Gene_Atlas", NULL, list(Signature=tcga_rra_data[!(rownames(tcga_rra_data) %in% rownames(final_signature)) & tcga_rra_data$up,"Symbol"]), output_file=paste(output_dir, "signature_tumorigenesis_mouse_cells.xlsx", sep=""))
 
 # GO Biological Process pathway analysis for the top 5 pathways in the final signature and the tumorigenesis signature
 
