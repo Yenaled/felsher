@@ -536,24 +536,8 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   <li>
     <ul>
       <li>output/integrative_signature/signature_myc_correlation.csv
-        <ul>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/integrative_signature/signature_tumorigenesis.csv
-        <ul>
-          <li><a href="#combinedsig">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/integrative_signature/signature.csv
+        output/integrative_signature/signature_tumorigenesis.csv
+        output/integrative_signature/signature.csv
         <ul>
           <li><a href="#combinedsig">Link to method</a></li>
         </ul>
