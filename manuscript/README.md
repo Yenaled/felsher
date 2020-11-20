@@ -2,6 +2,7 @@
 
 ## Delaney K. Sullivan, Anja Deutzmann, Renumathy Dhanasekaran, Maya S. Krishnan, Arvin M. Gouw, David I. Bellovin, Stacey J. Adam, Daniel F. Liefwalker, and Dean W. Felsher
 
+<!--
 ## Abstract
 
 MYC is a transcription factor frequently overexpressed in cancer. To determine how MYC drives the neoplastic phenotype, we performed transcriptomic analysis using a panel of MYC-driven autochthonous transgenic mouse models. We found that MYC elicited gene expression changes in a tissue-specific manner across B-cell lymphoma, T-cell acute lymphoblastic lymphoma, hepatocellular carcinoma, renal cell carcinoma, and lung adenocarcinoma.  However, despite the changes being highly tissue-specific, we found a common pattern of upregulation of embryonic stem cell gene programs and downregulation of tissue-of-origin gene programs across MYC-driven cancers. These changes, representative of tissue dedifferentiation, may be explained by epigenetic changes in normal tissue that occur during MYC-driven tumorigenesis. Furthermore, we find that the genes most specifically associated with MYC expression in human cancer appear to primarily be involved in ribosome biogenesis while the genes less associated with MYC tend to generally be involved in cell cycle processes.
@@ -31,3 +32,4 @@ and human cancer data from The Cancer Genome Atlas
 , ribosomal biogenesis, and nucleotide biosynthesis
 
 convergence on dedifferentiation
+-->
