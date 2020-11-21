@@ -19,6 +19,7 @@ Every single figure, table, and analysis can be reproduced entirely, down to the
 * British Journal of Cancer
 * npj Genomic Medicine
 * Molecular Cancer Research
+* Carcinogenesis
 * EBioMedicine
 * Plos Genetics
 * Oncogenesis
