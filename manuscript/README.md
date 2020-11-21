@@ -16,6 +16,7 @@ Every single figure, table, and analysis can be reproduced entirely, down to the
 * BMC genomics
 * Frontiers in Genetics
 * Frontiers in Oncology
+* British Journal of Cancer
 * npj Genomic Medicine
 * Molecular Cancer Research
 * EBioMedicine
