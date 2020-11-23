@@ -121,3 +121,51 @@ for (line in raw_genesets_mouse_tissue) {
         }
     }
 }
+
+# Manually update a few genes in the human Ensembl-to-symbol mapping, which is slightly out-of-date (note: NOT COMPREHENSIVE!)
+updated_ensembl_mapping <- list(ENSG00000275700="AATF",
+                                ENSG00000276043="UHRF1",
+                                ENSG00000276234="TADA2A",
+                                ENSG00000170468="RIOX1",
+                                ENSG00000275714="HIST1H3A",
+                                ENSG00000249859="PVT1",
+                                ENSG00000261236="BOP1",
+                                ENSG00000213553="RPLP0P6",
+                                ENSG00000213866="YBX1P10",
+                                ENSG00000234851="RPL23AP42",
+                                ENSG00000233476="EEF1A1P6",
+                                ENSG00000196205="EEF1A1P5",
+                                ENSG00000281398="SNHG4",
+                                ENSG00000214485="RPL7P1",
+                                ENSG00000137970="RPL7P9",
+                                ENSG00000249353="NPM1P27",
+                                ENSG00000224861="YBX1P1",
+                                ENSG00000214199="EEF1A1P12",
+                                ENSG00000249264="EEF1A1P9",
+                                ENSG00000250182="EEF1A1P13",
+                                ENSG00000249855="EEF1A1P19",
+                                ENSG00000204745="AC083899.1",
+                                ENSG00000172974="VDAC2P5",
+                                ENSG00000163597="SNHG16",
+                                ENSG00000234964="FABP5P7",
+                                ENSG00000234743="EIF5AP4",
+                                ENSG00000278845="MRPL45",
+                                ENSG00000220842="RPL21P16",
+                                ENSG00000234741="GAS5",
+                                ENSG00000255717="SNHG1",
+                                ENSG00000189343="RPS2P46",
+                                ENSG00000204253="HNRNPCP2",
+                                ENSG00000224578="HNRNPA1P48",
+                                ENSG00000243199="AC115223.1",
+                                ENSG00000232472="EEF1B2P3",
+                                ENSG00000139239="RPL14P1",
+                                ENSG00000250899="AC125807.2",
+                                ENSG00000183604="SMG1P5",
+                                ENSG00000228649="SNHG26",
+                                ENSG00000213300="HNRNPA3P6",
+                                ENSG00000213131="YWHAZP4",
+                                ENSG00000241506="PSMC1P1",
+                                ENSG00000232024="LSM12P1")
+updated_ensembl_mapping <- data.frame(Ensembl=names(updated_ensembl_mapping), Symbol=unlist(unname(updated_ensembl_mapping)))
+ensembl_human_symbols_mapping <- rbind(updated_ensembl_mapping, ensembl_human_symbols_mapping)
+ensembl_human_symbols_mapping <- ensembl_human_symbols_mapping[!duplicated(ensembl_human_symbols_mapping$Ensembl),]
