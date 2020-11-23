@@ -166,6 +166,6 @@ updated_ensembl_mapping <- list(ENSG00000275700="AATF",
                                 ENSG00000213131="YWHAZP4",
                                 ENSG00000241506="PSMC1P1",
                                 ENSG00000232024="LSM12P1")
-updated_ensembl_mapping <- data.frame(Ensembl=names(updated_ensembl_mapping), Symbol=unlist(unname(updated_ensembl_mapping)))
+updated_ensembl_mapping <- data.frame(Ensembl=names(updated_ensembl_mapping), Symbol=unlist(unname(updated_ensembl_mapping)), stringsAsFactors=FALSE)
 ensembl_human_symbols_mapping <- rbind(updated_ensembl_mapping, ensembl_human_symbols_mapping)
 ensembl_human_symbols_mapping <- ensembl_human_symbols_mapping[!duplicated(ensembl_human_symbols_mapping$Ensembl),]
