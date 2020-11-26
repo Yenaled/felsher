@@ -247,17 +247,6 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>A/B:
-        <ul>
-          <li>PDF files: chipseq/output/figures</li>
-          <li>Raw output: chipseq/output/mat, chipseq/output/se_h3k27ac_data.xlsx</li>
-          <li><a href="#chipseq">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
       <li>A:
         <ul>
           <li>PDF file: output/enrichr_mouse_go/heatmap_go.pdf</li>
@@ -269,6 +258,17 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
             </ul>
           </li>
           <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>A/B:
+        <ul>
+          <li>PDF files: chipseq/output/figures</li>
+          <li>Raw output: chipseq/output/mat, chipseq/output/se_h3k27ac_data.xlsx</li>
+          <li><a href="#chipseq">Link to method</a></li>
         </ul>
       </li>
     </ul>
