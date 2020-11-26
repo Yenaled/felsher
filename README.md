@@ -490,15 +490,6 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>chipseq/output/se_h3k27ac_data.xlsx
-        <ul>
-          <li><a href="#chipseq">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
       <li>output/enrichr_mouse_go/go_gsea.xlsx
         <ul>
           <li><a href="#mouse_de_go">Link to method</a></li>
@@ -520,6 +511,15 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       <li>output/enrichr_mouse_go/tissue_go.xlsx
         <ul>
           <li><a href="#mouse_de_go">Link to method</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>chipseq/output/se_h3k27ac_data.xlsx
+        <ul>
+          <li><a href="#chipseq">Link to method</a></li>
         </ul>
       </li>
     </ul>
