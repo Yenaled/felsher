@@ -18,6 +18,7 @@ Every single figure, table, and analysis can be reproduced entirely, down to the
 * Frontiers in Oncology
 * British Journal of Cancer
 * npj Genomic Medicine
+* iScience
 * Molecular Cancer Research
 * Carcinogenesis
 * EBioMedicine
