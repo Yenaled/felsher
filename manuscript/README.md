@@ -30,6 +30,7 @@ Every single figure, table, and analysis can be reproduced entirely, down to the
 * Cell Death and Disease
 * Cell Death and Differentiation
 * Cell Reports
+* Science Signaling
 * Genes and Development
 * PNAS
 
