@@ -22,6 +22,7 @@ Every single figure, table, and analysis can be reproduced entirely, down to the
 * Molecular Cancer Research
 * Carcinogenesis
 * EBioMedicine
+* Stem Cell Reports
 * Plos Genetics
 * Oncogenesis
 * Oncogene
