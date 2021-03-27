@@ -219,6 +219,10 @@ To perform downstream analysis of the combined signature generated above (e.g. s
 
 <pre>Rscript analyze_signatures.r</pre>
 
+Note: To perform ONLY the analysis relevant to the paper (i.e. without survival analysis and comparisons to other MYC gene sets), run the following instead:
+
+<pre>Rscript analyze_signatures2.r</pre>
+
 The output files will be found in output/signature_analysis/
 
 # ChIP-Seq<a name="chipseq"></a>
