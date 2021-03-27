@@ -126,7 +126,9 @@ Note: The smaller files are in the tcga/ directory of this Github repository. Ho
 
 For clinical data (for survival analysis), use the TCGA-CDR data file TCGA-CDR-SupplementalTableS1.xlsx which can be downloaded from the PanCanAtlas at https://api.gdc.cancer.gov/data/1b5f413e-a8d1-4d10-92eb-7c4ae739ed81 -- this file can also be found in the tcga/ directory of this GitHub repository.
 
-## TCGA survival analysis (Cox regression meta-analysis)<a name="tcgacox"></a>
+## TCGA survival analysis (Cox regression meta-analysis) (optional)<a name="tcgacox"></a>
+
+Note: Not used in paper
 
 To obtain Cox regression z-scores and meta-z scores for TCGA data, run the following:
 
@@ -322,21 +324,6 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       </li>
       <li>E:
         <ul>
-          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
-          <li>Raw output:
-            <ul>
-              <li>qpcr/summary_p493.xlsx</li>
-              <li>qpcr/summary_ec4.xlsx</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>A:
-        <ul>
           <li>PDF file: output/signature_analysis/ccle_clustering.pdf</li>
           <li>Raw output:
             <ul>
@@ -346,50 +333,15 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
           <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
-      <li>B:
+      <li>F:
         <ul>
-          <li>PDF file: output/signature_analysis/tcga_metaz.pdf</li>
+          <li>Graphpad Prism file: qpcr/qpcr_validation.pzfx</li>
           <li>Raw output:
             <ul>
-              <li>output/signature_analysis/tcga_metaz.csv</li>
-              <li>output/signature_analysis/log.txt</li>
+              <li>qpcr/summary_p493.xlsx</li>
+              <li>qpcr/summary_ec4.xlsx</li>
             </ul>
           </li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
-        </ul>
-      </li>
-      <li>C:
-        <ul>
-          <li>PDF file: output/signature_analysis/upset_genesets_top_5.pdf</li>
-          <li>Raw gene sets / signatures:
-            <ul>
-              <li>genesets/myc_signature_genesets_ensembl.gmx</li>
-              <li>output/integrative_signature/signature.csv</li>
-            </ul>
-          </li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
-        </ul>
-      </li>
-      <li>D:
-        <ul>
-          <li>PDF file: output/signature_analysis/ccle_genesets_cor.pdf</li>
-          <li>Raw dataset:
-            <ul>
-              <li>ccle/CCLE_myc_cor.csv</li>
-            </ul>
-          </li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
-        </ul>
-      </li>
-      <li>E:
-        <ul>
-          <li>PDF file: output/signature_analysis/tcga_genesets_metaz.pdf</li>
-          <li>Raw dataset:
-            <ul>
-              <li>tcga/tcga_zscores.csv.gz</li>
-            </ul>
-          </li>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
     </ul>
@@ -558,27 +510,9 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
-      <li>tcga/tcga_zscores.csv.gz
-        <ul>
-          <li><a href="#tcgacox">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
       <li>ccle/CCLE_myc_cor.csv
         <ul>
           <li><a href="#cclepairwise">Link to method</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>output/signature_analysis/genesets_info.csv
-        <ul>
-          <li><a href="#combinedsigdownstream">Link to method</a></li>
         </ul>
       </li>
     </ul>
