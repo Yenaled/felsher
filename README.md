@@ -122,7 +122,9 @@ Note: The smaller files are in the tcga/ directory of this Github repository. Ho
 </ul>
   
 
-## Obtaining TCGA clinical data
+## Obtaining TCGA clinical data (optional)
+
+Note: Not used in paper
 
 For clinical data (for survival analysis), use the TCGA-CDR data file TCGA-CDR-SupplementalTableS1.xlsx which can be downloaded from the PanCanAtlas at https://api.gdc.cancer.gov/data/1b5f413e-a8d1-4d10-92eb-7c4ae739ed81 -- this file can also be found in the tcga/ directory of this GitHub repository.
 
