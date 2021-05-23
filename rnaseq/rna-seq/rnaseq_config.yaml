@@ -1,0 +1,4 @@
+module_order:
+    - 'featureCounts'
+    - 'star'
+    - 'kallisto'
