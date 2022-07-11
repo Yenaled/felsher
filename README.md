@@ -532,6 +532,15 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>tcga/tcga_zscores.csv.gz
+        <ul>
+          <li>This survival analysis was added during peer-review, and requires running the full `Rscript analyze_signatures.r` rather than the abridge `Rscript analyze_signatures2.r` (<a href="#downstream-analysis-of-combined-signature">Link to method</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 # Appendix<a name="appendix"></a>
