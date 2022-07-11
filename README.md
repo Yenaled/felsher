@@ -423,6 +423,16 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
       </li>
     </ul>
   </li>
+  <li>
+    <ul>
+      <li>output/signature_analysis/tcga_metaz.pdf
+        <ul>
+          <li>Raw output: output/signature_analysis/tcga_metaz.csv</li>
+          <li>This survival analysis was added during peer-review, and requires running the full `Rscript analyze_signatures.r` rather than the abridged `Rscript analyze_signatures2.r` (<a href="#downstream-analysis-of-combined-signature">Link to method</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 **Supplementary tables** in paper were generated as follows:
