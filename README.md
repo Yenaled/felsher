@@ -425,6 +425,11 @@ Details are located at https://github.com/Yenaled/felsher/tree/master/chipseq
   </li>
   <li>
     <ul>
+      <li>Generated experimentally (immunohistochemistry)</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
       <li>output/signature_analysis/tcga_metaz.pdf
         <ul>
           <li>Raw output: output/signature_analysis/tcga_metaz.csv</li>
