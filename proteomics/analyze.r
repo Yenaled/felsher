@@ -2,6 +2,7 @@ require(ComplexHeatmap)
 # Select genes in the 67-gene signature that are part of both (i.e. within the intersection of) "embryonic stem line V26 2 p16" and "embryonic stem line Bruce4 p13"
 genes <- "APEX1,GART,SRM,RUVBL1,NOP58,MYBBP1A,IMPDH2,NCL,NOP2,PWP1,WDR43,RRP9,TAF1D,RCC1,PRMT5,WDR75,RRP1B,GNL3,RSL1D1,CIRH1A,POLR1B,GRWD1,GEMIN4,GEMIN5"
 genes <- unlist(strsplit(genes, ","))
+genes <- c(genes, "ENO1") # Also include ENO1 gene since a reviewer referred to this gene
 negative_genes <- "ADH1"
 negative_genes <- unlist(strsplit(toupper(negative_genes),","))
 data <- read.table("MYC_off_vs_On_All_p05.txt", stringsAsFactors=F, sep="\t", skip=2, header=T, row.names=1)
